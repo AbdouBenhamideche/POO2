@@ -1,0 +1,57 @@
+﻿<Window x:Class="GestionVin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Connexion et Inscription" Height="320" Width="400">
+    <Grid>
+        <TabControl>
+            <!-- Onglet Inscription -->
+            <TabItem Header="Inscription">
+                <Grid>
+                    <!-- Ajoutez ici les éléments pour le formulaire d'inscription -->
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Nom:"/>
+                        <TextBox x:Name="txtNom"/>
+                        
+                        <TextBlock Text="Prenom:"/>
+                        <TextBox x:Name="txtPrenom"/>
+                        
+                        <TextBlock Text="Date de naissance:"/>
+                        <DatePicker x:Name="DateDeNaissance"/>
+
+                        <TextBlock Text="Adresse courriel:"/>
+                        <TextBox x:Name="txtEmailInscription" />
+
+                        <TextBlock Text="Civilité:"/>
+                        <ComboBox x:Name="cmbCivilite">
+                            <ComboBoxItem IsEnabled="False">Sélectionner une civilité</ComboBoxItem>
+                            <ComboBoxItem Content="M."/>
+                            <ComboBoxItem Content="Mme"/>
+                            <ComboBoxItem Content="Autre"/>
+                        </ComboBox>
+                        <TextBlock Height="20"/>
+                        <!-- Ajoutez d'autres champs ici -->
+                        <Button Content="S'inscrire" Click="Inscription_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Onglet Connexion -->
+            <TabItem Header="Connexion">
+                <Grid>
+                    <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Adresse Email:"/>
+                        <TextBox x:Name="txtEmailConnnexion"/>
+
+                        <TextBlock Text="Mot de passe:" />
+                        <PasswordBox x:Name="txtMotDePasse" />
+                        <!-- Ajoutez d'autres champs ici -->
+                        <TextBlock Height="20"/>
+                        <Button Content="Se connecter" Click="Connexion_Click"/>
+                        
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

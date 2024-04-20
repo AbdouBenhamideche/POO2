@@ -1,0 +1,19 @@
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\Projet POO2.exe
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\Projet POO2.deps.json
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\Projet POO2.runtimeconfig.json
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\Projet POO2.dll
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\Projet POO2.pdb
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\MainWindow.g.cs
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2_MarkupCompile.cache
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\MainWindow.baml
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2.g.resources
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2.AssemblyInfoInputs.cache
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2.AssemblyInfo.cs
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2.csproj.CoreCompileInputs.cache
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2.dll
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\refint\Projet POO2.dll
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2.pdb
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2.genruntimeconfig.cache
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\ref\Projet POO2.dll
