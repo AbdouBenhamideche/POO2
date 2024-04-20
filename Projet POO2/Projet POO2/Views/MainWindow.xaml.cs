@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet_POO2.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,13 +27,13 @@ namespace GestionVin
         }
         public void Inscription_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-
-            this.Close();
+           
         }
         public void Connexion_Click(object sender, RoutedEventArgs e) {
-            
+            InProgramWindow inProgramWindow = new InProgramWindow();
+            inProgramWindow.Show();
+
+            this.Close();
 
         }
     }

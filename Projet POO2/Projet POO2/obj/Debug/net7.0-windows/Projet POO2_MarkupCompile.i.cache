@@ -1,5 +1,5 @@
 ﻿Projet POO2
-
+1.0.0.0
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\App.xaml
 21539757999
 
-4876989804
+6148503535
 199-1113494152
 Views\InProgramWindow.xaml;Views\MainWindow.xaml;
 
-False
+True
 

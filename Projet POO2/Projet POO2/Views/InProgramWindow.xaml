@@ -7,6 +7,67 @@
         mc:Ignorable="d"
         Title="InProgramWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl>    
+            <!-- Onglet Inscription -->
+            <TabItem Header="Accueil">
+                <Grid>
+                    <!-- Ajoutez ici les éléments pour le formulaire d'inscription -->
+                    <StackPanel Margin="10">
+                     </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Onglet Connexion -->
+            <TabItem Header="Gestion des entités">
+                <Grid>
+                    <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
+                    <StackPanel Margin="10">
+
+                    </StackPanel>
+                </Grid>
+                
+            </TabItem>
+            <!-- Onglet Connexion -->
+            <TabItem Header="entrainement de l'arbre">
+                <Grid>
+                    <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
+                    <StackPanel Margin="10">
+
+                    </StackPanel>
+                </Grid>
+                
+            </TabItem>
+            <!-- Onglet Connexion -->
+            <TabItem Header="effectuer une prédiction">
+                <Grid>
+                    <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
+                    <StackPanel Margin="10">
+
+                    </StackPanel>
+                </Grid>
+                
+            </TabItem>
+            <TabItem Header="Modefier infomations personelles">
+                <Grid>
+                    <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
+                    <StackPanel Margin="10">
+
+                    </StackPanel>
+                </Grid>
+                
+            </TabItem>
+            <TabItem Header="Menu de navigation">
+                <Grid>
+                    <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
+                    <StackPanel Margin="10">
+
+                    </StackPanel>
+                </Grid>
+                
+            </TabItem>
+            
+        </TabControl>
+
+
     </Grid>
 </Window>
