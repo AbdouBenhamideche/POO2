@@ -7,65 +7,189 @@
         mc:Ignorable="d"
         Title="InProgramWindow" Height="450" Width="800">
     <Grid>
-        <TabControl>    
+        <Menu>
+    
+            <MenuItem Header="Fichier">
+                 
+                <MenuItem Header="Ouvrir ..." />
+               
+                <MenuItem Header="Quitter"/>
+            </MenuItem>
+
+            <MenuItem Header="Client">
+                
+                <MenuItem Header="Ajouter un client"/>
+            </MenuItem>
+        </Menu>
+
+        <TabControl Margin="0,17,0,0">
+            
+
+
             <!-- Onglet Inscription -->
             <TabItem Header="Accueil">
+                
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <!-- Définir les colonnes -->
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <!-- Définir les lignes -->
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="Icons/HomeIcon.png" Width="50" Height="50" Margin="29,31,80,54" Grid.Column="0" Grid.Row="0"/>
                     <!-- Ajoutez ici les éléments pour le formulaire d'inscription -->
                     <StackPanel Margin="10">
-                     </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock Text="    Bienvenue dans notre application de gestion du vin ! Découvrez une expérience unique pour explorer, cataloguer, apprécier et évaluer la qualité d'une large sélection de vins. Que vous soyez un amateur passionné ou un professionnel du vin, notre application vous offre les outils nécessaires pour enrichir votre expérience vinicole. " Grid.Column="0"  TextWrapping="Wrap" TextAlignment="justify" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Margin="54,115,0,0" Width="705" Grid.ColumnSpan="5" Grid.RowSpan="2" Height="146"/>
+
                 </Grid>
             </TabItem>
 
             <!-- Onglet Connexion -->
-            <TabItem Header="Gestion des entités">
+            <TabItem Header="Gestion des entités" Height="20" VerticalAlignment="Top">
                 <Grid>
                     <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
-                    <StackPanel Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Liste des entités" FontSize="16" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="0"/>
+                    <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="4" BorderBrush="Black" BorderThickness="1">
+                        <ScrollViewer>
+                            <!-- Content of the scrollable area here -->
+                        </ScrollViewer>
+                    </Border>
+                    <Button Grid.Row="5" Grid.Column="4" Content="Ajouter" Width="100" Height="30" Margin="0,0,0,0" />
 
-                    </StackPanel>
+
                 </Grid>
-                
+
             </TabItem>
             <!-- Onglet Connexion -->
-            <TabItem Header="entrainement de l'arbre">
+            <TabItem Header="Entrainement de l'arbre">
                 <Grid>
                     <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
-                    <StackPanel Margin="10">
-
-                    </StackPanel>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
+                    <Button Grid.Row="4" Grid.Column="3" Content="Apprentissage" Width="100" Height="30" />
+                    <Button Grid.Row="4" Grid.Column="4" Content="Evaluer" Width="100" Height="30" />
                 </Grid>
-                
+
             </TabItem>
             <!-- Onglet Connexion -->
-            <TabItem Header="effectuer une prédiction">
+            <TabItem Header="Effectuer une prédiction">
                 <Grid>
-                    <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
-                    <StackPanel Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
 
-                    </StackPanel>
+                    <TextBlock Text="Choisissez une entité parmi les entités de votre liste afin d'effectuer une prédiction :"  Grid.ColumnSpan="5" Margin="20" />
+                    <Button Content="Prédire" Grid.Row="1" Grid.Column="3"  Width="100" Height="30" Margin="0,0,0,0"/>
+
+
+
                 </Grid>
-                
+
             </TabItem>
-            <TabItem Header="Modefier infomations personelles">
+            <TabItem Header="Modifier infomations personelles">
                 <Grid>
-                    <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
-                    <StackPanel Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+
+                    <StackPanel Margin="10" Grid.RowSpan="4"  Grid.ColumnSpan="2">
+                       
+                        <TextBlock Text="Nom:"/>
+                        <TextBox x:Name="txtNom" Grid.Column="3" Width="200"/>
+
+                        <TextBlock Text="Prenom:" />
+                        <TextBox x:Name="txtPrenom" Width="200"/>
+
+                        <TextBlock Text="Date de naissance:"/>
+                        <DatePicker x:Name="DateDeNaissance" Width="200"/>
+
+
+                        <TextBlock Text="Mot de passe:" Margin="0,20,0,0" />
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <!-- Contenu disposé verticalement -->
+
+                            <PasswordBox  x:Name="txtMotDePasse" Width="150"  IsEnabled="false"/>
+                        <Button Content="Modifier" Width="100" Height="30" Margin="20,0,0,0"  />
+
+                           
+                        </StackPanel>
+                        
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0" Grid.Column=" 3" Grid.Row="4" Grid.ColumnSpan="5">
+                        <!-- Contenu disposé verticalement -->
+
+
+                        <Button Content="Annuler"   Width="100" Height="30" Margin="20,0,0,0"  />
+                        <Button Content="Conifrmer"  Width="100" Height="30" Margin="20,0,0,0"  />
+
 
                     </StackPanel>
-                </Grid>
-                
-            </TabItem>
-            <TabItem Header="Menu de navigation">
-                <Grid>
-                    <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
-                    <StackPanel Margin="10">
 
-                    </StackPanel>
                 </Grid>
-                
+
             </TabItem>
             
+
         </TabControl>
 
 
