@@ -25,12 +25,13 @@ namespace GestionVin
         {
             InitializeComponent();
         }
+        public InProgramWindow inProgramWindow;
         public void Inscription_Click(object sender, RoutedEventArgs e)
         {
            
         }
         public void Connexion_Click(object sender, RoutedEventArgs e) {
-            InProgramWindow inProgramWindow = new InProgramWindow();
+            inProgramWindow = new InProgramWindow();
             inProgramWindow.Show();
 
             this.Close();

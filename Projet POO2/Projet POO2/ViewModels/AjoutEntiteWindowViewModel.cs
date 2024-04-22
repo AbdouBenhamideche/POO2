@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
-
+using Projet_POO2.Models;
 
 namespace Projet_POO2.ViewModels
 {
@@ -26,8 +26,9 @@ namespace Projet_POO2.ViewModels
         }
         public ICommand EntiteCommand { get; private set; }
         public void ActionTest() {
-            this.Entite.Name = "reussite";
-            
+            Models.Entite entite = new Models.Entite(this.Entite.Name, this.Entite.Type, this.Entite.Alcohol, this.Entite.CitricAcid, this.Entite.Sulphates, this.Entite.VolatileAcidity);
+            ListEntite.AddToList(entite);
+
         }
     }
 }

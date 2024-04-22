@@ -27,6 +27,21 @@ namespace Projet_POO2.Views
         public void AjouterEntite(object sender, RoutedEventArgs e)
         {
             AjoutEntiteWindow ajoutEntiteWindow = new AjoutEntiteWindow();
-            ajoutEntiteWindow.ShowDialog();    }
+            ajoutEntiteWindow.ShowDialog();
+
+            ListEntite.Children.Clear();
+            foreach (var ent in Models.ListEntite.entiteList)
+            {
+                // Créez un bouton
+                Button button = new Button();
+
+                // Définissez le contenu du bouton
+                button.Content = ent.Name;
+
+                // Ajoutez le bouton au StackPanel
+                ListEntite.Children.Add(button);
+            }
+
+        }
     }
 }

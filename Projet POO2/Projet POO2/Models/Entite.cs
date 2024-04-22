@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace Projet_POO2.Models
 {
-    class Entite : INotifyPropertyChanged
+    public class Entite : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private string _name;
@@ -19,7 +19,20 @@ namespace Projet_POO2.Models
         private float _volatileAcidity;
 
 
+        public Entite(string name, string type, float alcohol, float acideCitric, float sulphates, float volatileAcidity) {
 
+            this._name = name;
+            this._type = type;
+            this._alchool = alcohol;
+            this._acideCitric = acideCitric;
+            this._sulphates = sulphates;
+            this._volatileAcidity = volatileAcidity;
+
+        }
+        public Entite()
+        {
+
+        }
         public string Name
         {
             get { return _name; }
@@ -89,11 +102,7 @@ namespace Projet_POO2.Models
         private void SetIsValid()
         {
             this._isValid = !string.IsNullOrEmpty(Name) &&
-           !string.IsNullOrEmpty(Type) &&
-           !string.IsNullOrEmpty(Alcohol.ToString()) &&
-           !string.IsNullOrEmpty(Sulphates.ToString()) &&
-           !string.IsNullOrEmpty(CitricAcid.ToString()) &&
-           !string.IsNullOrEmpty(VolatileAcidity.ToString());
+           !string.IsNullOrEmpty(Type);
         }
         private void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {

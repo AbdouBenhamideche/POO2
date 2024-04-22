@@ -29,7 +29,16 @@ namespace Projet_POO2.Views
             // Fermer la fenêtre
             this.Close();
         }
-     
+        private void Ajouter(object sender, RoutedEventArgs e)
+        {
+            // Supprimer tous les enfants du StackPanel
+
+
+
+            this.Close();
+        }
+
+
 
     }
 }

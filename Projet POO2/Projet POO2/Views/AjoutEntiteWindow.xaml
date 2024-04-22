@@ -25,28 +25,28 @@
         <TextBlock Text="Ajouter des informations sur le vin" Grid.Row="0" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,10"/>
 
         <Label Content="Nom du vin :" Grid.Row="1" Margin="10"/>
-        <TextBox x:Name="NomVin" Grid.Row="1" Margin="120,10,10,10" />
+        <TextBox Text="{Binding Entite.Name, UpdateSourceTrigger=PropertyChanged}" x:Name="NomVin" Grid.Row="1" Margin="120,10,10,10" />
 
         
 
         <Label Content="Type :" Grid.Row="3" Margin="10"/>
-        <TextBox x:Name="TypeVin" Grid.Row="3" Margin="120,10,10,10" />
+        <TextBox Text="{Binding Entite.Type, UpdateSourceTrigger=PropertyChanged}" x:Name="TypeVin" Grid.Row="3" Margin="120,10,10,10" />
 
         <Label Content="Niveau d'alcool :" Grid.Row="4" Margin="10"/>
-        <TextBox x:Name="Alchool" Grid.Row="4" Margin="120,10,10,10" />
+        <TextBox Text="{Binding Entite.Alcohol, UpdateSourceTrigger=PropertyChanged}" x:Name="Alchool" Grid.Row="4" Margin="120,10,10,10" />
 
         <Label Content="Sulphates :" Grid.Row="5" Margin="10"/>
-        <TextBox x:Name="Sulphates" Grid.Row="5" Margin="120,10,10,10" />
+        <TextBox Text="{Binding Entite.Sulphates, UpdateSourceTrigger=PropertyChanged}" x:Name="Sulphates" Grid.Row="5" Margin="120,10,10,10" />
 
         <Label Content="Acide citrique :" Grid.Row="6" Margin="10"/>
-        <TextBox x:Name="AcideCitrique" Grid.Row="6" Margin="120,10,10,10" />
+        <TextBox Text="{Binding Entite.CitricAcid, UpdateSourceTrigger=PropertyChanged}" x:Name="AcideCitrique" Grid.Row="6" Margin="120,10,10,10" />
 
         <Label Content="Volatile Acidité :" Grid.Row="7" Margin="10"/>
-        <TextBox x:Name="VolatileAcidite" Grid.Row="7" Margin="120,10,10,10" />
+        <TextBox Text="{Binding Entite.VolatileAcidity, UpdateSourceTrigger=PropertyChanged}" x:Name="VolatileAcidite" Grid.Row="7" Margin="120,10,10,10" />
 
         <!-- Boutons OK et Annuler -->
         <StackPanel Orientation="Horizontal" Grid.Row="8" HorizontalAlignment="Center" Margin="0,20">
-            <Button Content="OK" Width="100" Margin="10" Command="{Binding EntiteCommand}"/>
+            <Button Content="OK" Width="100" Margin="10" Command="{Binding EntiteCommand}" Click="Ajouter"/>
             <Button Content="Annuler" Width="100" Margin="10" Click="Annuler"/>
         </StackPanel>
     </Grid>
