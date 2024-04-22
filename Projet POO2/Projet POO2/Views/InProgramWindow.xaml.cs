@@ -23,5 +23,10 @@ namespace Projet_POO2.Views
         {
             InitializeComponent();
         }
+
+        public void AjouterEntite(object sender, RoutedEventArgs e)
+        {
+            AjoutEntiteWindow ajoutEntiteWindow = new AjoutEntiteWindow();
+            ajoutEntiteWindow.ShowDialog();    }
     }
 }

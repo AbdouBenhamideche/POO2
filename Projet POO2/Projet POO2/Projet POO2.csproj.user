@@ -7,11 +7,17 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AjoutEntiteWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\InProgramWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\AjoutEntiteWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\InProgramWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

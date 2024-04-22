@@ -25,3 +25,5 @@ C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-wi
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2.csproj.CopyComplete
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Projet POO2_Content.g.cs
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\Views\Icons\HomeIcon.png
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\AjoutEntiteWindow.g.cs
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\AjoutEntiteWindow.baml
