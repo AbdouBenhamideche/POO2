@@ -55,5 +55,6 @@ namespace GestionVin
             // Perform actions based on the entered password (e.g., validation, storing in model)
             // ... (your logic here)
         }
+        
     }
 }

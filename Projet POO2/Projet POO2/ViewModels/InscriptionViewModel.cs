@@ -1,4 +1,5 @@
 ﻿using GestionVin;
+using Projet_POO2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,5 +34,31 @@ namespace Projet_POO2.ViewModels
             
         }
     }
-    
+    //public class ConnexionViewModel
+    //{
+    //    public Models.Connexion Connexion { get; set; }
+    //    private GestionVin.MainWindow _mainWindow;
+    //    public ConnexionViewModel(GestionVin.MainWindow mainWindow)
+    //    {
+    //        this.Connexion = new Models.Connexion();
+    //        this._mainWindow = mainWindow;
+    //        ConnexionCommande = new RelayCommand(
+    //            o => Connexion.VerifierInfosConnexion,
+    //            o => ConnexionIn()
+
+    //            );
+
+    //    }
+
+    //    public ICommand ConnexionCommande { get; private set; }
+    //    public void ConnexionIn()
+    //    {
+    //        _mainWindow.inProgramWindow = new InProgramWindow();
+    //        _mainWindow.inProgramWindow.Show();
+
+    //        _mainWindow.Close();
+
+    //    }
+    //}
+
 }

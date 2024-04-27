@@ -46,7 +46,7 @@
                         <TextBox x:Name="txtEmailConnnexion"/>
 
                         <TextBlock Text="Mot de passe:" />
-                        <PasswordBox x:Name="txtMotDePasse" />
+                        <PasswordBox x:Name="txtMotDePasse" PasswordChanged ="OnPasswordChanged" />
                         <!-- Ajoutez d'autres champs ici -->
                         <TextBlock Height="20"/>
                         <Button Content="Se connecter" Click="Connexion_Click"/>
