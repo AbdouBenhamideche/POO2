@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 namespace Projet_POO2.Views
 {
     /// <summary>
-    /// Logique d'interaction pour AjoutEntiteWindow.xaml
+    /// Logique d'interaction pour AjoutVinWindow.xaml
     /// </summary>
-    public partial class AjoutEntiteWindow : Window
+    public partial class AjoutVinWindow : Window
     {
-        public AjoutEntiteWindow()
+        public AjoutVinWindow()
         {
             InitializeComponent();
-            DataContext = new ViewModels.AjoutEntiteWindowViewModel(this);
+            DataContext = new ViewModels.AjoutVinWindowViewModel(this);
         }
         private void Annuler(object sender, RoutedEventArgs e)
         {

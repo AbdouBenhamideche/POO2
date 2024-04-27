@@ -24,13 +24,13 @@ namespace Projet_POO2.Views
             InitializeComponent();
         }
 
-        public void AjouterEntite(object sender, RoutedEventArgs e)
+        public void AjouterVin(object sender, RoutedEventArgs e)
         {
-            AjoutEntiteWindow ajoutEntiteWindow = new AjoutEntiteWindow();
-            ajoutEntiteWindow.ShowDialog();
+            AjoutVinWindow ajoutVinWindow = new AjoutVinWindow();
+            ajoutVinWindow.ShowDialog();
 
-            ListEntite.Children.Clear();
-            foreach (var ent in Models.ListEntite.entiteList)
+            ListVin.Children.Clear();
+            foreach (var ent in Models.ListVin.VinList)
             {
                 // Créez un bouton
                 Button button = new Button();
@@ -39,7 +39,7 @@ namespace Projet_POO2.Views
                 button.Content = ent.Name;
 
                 // Ajoutez le bouton au StackPanel
-                ListEntite.Children.Add(button);
+                ListVin.Children.Add(button);
             }
 
         }

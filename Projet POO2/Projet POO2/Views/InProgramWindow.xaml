@@ -75,14 +75,14 @@
                     <TextBlock Text="Liste des entités" FontSize="16" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="0"/>
                     <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="4" BorderBrush="Black" BorderThickness="1">
                         <ScrollViewer>
-                            <StackPanel x:Name="ListEntite">
+                            <StackPanel x:Name="ListVin">
                               
                             </StackPanel>
 
                             <!-- Content of the scrollable area here -->
                         </ScrollViewer>
                     </Border>
-                    <Button Grid.Row="5" Grid.Column="4" Content="Ajouter" Width="100" Height="30" Margin="0,0,0,0" Click="AjouterEntite" />
+                    <Button Grid.Row="5" Grid.Column="4" Content="Ajouter" Width="100" Height="30" Margin="0,0,0,0" Click="AjouterVin" />
 
 
                 </Grid>

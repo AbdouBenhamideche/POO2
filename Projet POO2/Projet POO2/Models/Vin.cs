@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace Projet_POO2.Models
 {
-    public class Entite : INotifyPropertyChanged
+    public class Vin : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private string _name;
@@ -19,7 +19,7 @@ namespace Projet_POO2.Models
         private float _volatileAcidity;
 
 
-        public Entite(string name, string type, float alcohol, float acideCitric, float sulphates, float volatileAcidity) {
+        public Vin(string name, string type, float alcohol, float acideCitric, float sulphates, float volatileAcidity) {
 
             this._name = name;
             this._type = type;
@@ -29,7 +29,7 @@ namespace Projet_POO2.Models
             this._volatileAcidity = volatileAcidity;
 
         }
-        public Entite()
+        public Vin()
         {
 
         }

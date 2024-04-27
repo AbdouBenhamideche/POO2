@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Projet_POO2.Models
 {
-    public class ListEntite
+    public class ListVin
     {
-        public static List<Entite> entiteList = new List<Entite>(); // Modifier ici
+        public static List<Vin> VinList = new List<Vin>(); // Modifier ici
 
-        public static void AddToList(Entite entite)
+        public static void AddToList(Vin vin)
         {
-            entiteList.Add(entite);
+            VinList.Add(vin);
         }
     }
 }

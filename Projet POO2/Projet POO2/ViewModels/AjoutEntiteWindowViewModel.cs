@@ -9,25 +9,25 @@ using Projet_POO2.Models;
 
 namespace Projet_POO2.ViewModels
 {
-    class AjoutEntiteWindowViewModel
+    class AjoutVinWindowViewModel
     {
-        public Models.Entite Entite{ get; set; }
-        private Views.AjoutEntiteWindow _ajoutEntiteWindow;
+        public Models.Vin Vin{ get; set; }
+        private Views.AjoutVinWindow _ajoutVinWindow;
 
-        public AjoutEntiteWindowViewModel(Views.AjoutEntiteWindow ajoutEntiteWindow)
+        public AjoutVinWindowViewModel(Views.AjoutVinWindow ajoutVinWindow)
         {
-            this.Entite = new Models.Entite();
-            this._ajoutEntiteWindow = ajoutEntiteWindow;
+            this.Vin = new Models.Vin();
+            this._ajoutVinWindow = ajoutVinWindow;
 
-            EntiteCommand = new RelayCommand(
-               o => this.Entite.IsValid,
+            VinCommand = new RelayCommand(
+               o => this.Vin.IsValid,
                o => this.ActionTest()
            );
         }
-        public ICommand EntiteCommand { get; private set; }
+        public ICommand VinCommand { get; private set; }
         public void ActionTest() {
-            Models.Entite entite = new Models.Entite(this.Entite.Name, this.Entite.Type, this.Entite.Alcohol, this.Entite.CitricAcid, this.Entite.Sulphates, this.Entite.VolatileAcidity);
-            ListEntite.AddToList(entite);
+            Models.Vin vin = new Models.Vin(this.Vin.Name, this.Vin.Type, this.Vin.Alcohol, this.Vin.CitricAcid, this.Vin.Sulphates, this.Vin.VolatileAcidity);
+            ListVin.AddToList(vin);
 
         }
     }
