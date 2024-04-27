@@ -1,7 +1,7 @@
 ﻿<Window x:Class="GestionVin.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Connexion et Inscription" Height="320" Width="400">
+        Title="Connexion et Inscription" Height="400" Width="400">
     <Grid>
         <TabControl>
             <!-- Onglet Inscription -->
@@ -10,27 +10,29 @@
                     <!-- Ajoutez ici les éléments pour le formulaire d'inscription -->
                     <StackPanel Margin="10">
                         <TextBlock Text="Nom:"/>
-                        <TextBox x:Name="txtNom"/>
+                        <TextBox x:Name="txtNom" Text="{Binding Utilisateur.Nom,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         
                         <TextBlock Text="Prenom:"/>
-                        <TextBox x:Name="txtPrenom"/>
+                        <TextBox x:Name="txtPrenom" Text="{Binding Utilisateur.Prenom,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         
                         <TextBlock Text="Date de naissance:"/>
-                        <DatePicker x:Name="DateDeNaissance"/>
+                        <DatePicker x:Name="DateDeNaissance" Text="{Binding Utilisateur.DateDeNaissance ,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                         <TextBlock Text="Adresse courriel:"/>
-                        <TextBox x:Name="txtEmailInscription" />
+                        <TextBox x:Name="txtEmailInscription" Text="{Binding Utilisateur.Email ,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBlock Text="Civilité:"/>
-                        <ComboBox x:Name="cmbCivilite">
+                        <ComboBox x:Name="cmbCivilite" Text="{Binding Utilisateur.Civilite ,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                             <ComboBoxItem IsEnabled="False">Sélectionner une civilité</ComboBoxItem>
                             <ComboBoxItem Content="M."/>
                             <ComboBoxItem Content="Mme"/>
                             <ComboBoxItem Content="Autre"/>
                         </ComboBox>
+                        <TextBlock Text="Mot de passe:"  Margin="0,20,0,0"/>
+                        <PasswordBox x:Name="pwPassword" PasswordChanged ="OnPasswordChanged"/>
                         <TextBlock Height="20"/>
                         <!-- Ajoutez d'autres champs ici -->
-                        <Button Content="S'inscrire" Click="Inscription_Click"/>
+                        <Button Content="S'inscrire" Click="Inscription_Click" Command="{Binding InscriptionCommande}"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
