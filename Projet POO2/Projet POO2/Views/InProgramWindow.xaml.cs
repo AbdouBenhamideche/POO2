@@ -1,4 +1,5 @@
 ﻿using GestionVin;
+using Microsoft.VisualBasic.ApplicationServices;
 using Projet_POO2.Models;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace Projet_POO2.Views
             
             
 
-            MessageAccueil.Text = $"            Bienvenue {user.Prenom} {user.IdUtilisateur} {user.Nom} dans notre application de gestion du vin !Découvrez une expérience unique pour explorer, cataloguer, apprécier et évaluer la qualité d'une large sélection de vins. Que vous soyez un amateur passionné ou un professionnel du vin, notre application vous offre les outils nécessaires pour enrichir votre expérience vinicole. \r\n";
+            MessageAccueil.Text = $"            Bienvenue {user.Prenom}  {user.Nom} dans notre application de gestion du vin !Découvrez une expérience unique pour explorer, cataloguer, apprécier et évaluer la qualité d'une large sélection de vins. Que vous soyez un amateur passionné ou un professionnel du vin, notre application vous offre les outils nécessaires pour enrichir votre expérience vinicole. \r\n";
         }
 
         public void AjouterVin(object sender, RoutedEventArgs e)
@@ -60,8 +61,38 @@ namespace Projet_POO2.Views
         AjoutTerrainWindow ajoutTerrainWindow = new AjoutTerrainWindow();
             ajoutTerrainWindow.ShowDialog();
         }
-        public void Annuler(object sender, RoutedEventArgs e) { }
-        public void Confirmer(object sender, RoutedEventArgs e) { }
+        public void Annuler(object sender, RoutedEventArgs e) {
+            txtNom.Text = "";
+            txtPrenom.Text = "";
+            DatePicker datePicker = (DatePicker)FindName("DateDeNaissance");
+            datePicker.SelectedDate = null;
+
+
+        }
+        public void Confirmer(object sender, RoutedEventArgs e) {
+            string nom, prenom, dateDeNaissance;
+            Utilisateur user = new Utilisateur();
+            user = ApplicationVinDbContext.GetUserByEmail(MainWindow.x);
+            DatePicker datePicker = (DatePicker)FindName("DateDeNaissance");
+
+            nom = txtNom.Text;
+            prenom = txtPrenom.Text;
+            dateDeNaissance = datePicker.SelectedDate.ToString();
+            if (!string.IsNullOrEmpty(nom) && !string.IsNullOrEmpty(prenom) && !string.IsNullOrEmpty(dateDeNaissance)) { 
+            ApplicationVinDbContext.UpdateUser(nom, prenom, user.IdUtilisateur, dateDeNaissance);
+                MessageBox.Show("Modification effectué avec succées, Redemarrez l'application pour effectuer les changements");
+               user.Nom = nom;
+                user.Prenom = prenom;
+                user.DateDeNaissance = dateDeNaissance.ToString();
+                
+            }
+            else
+            {
+                MessageBox.Show("Vouillez remplir tout les champs");
+            }
+
+
+        }
         public void ModifierMotDePasse(object sender, RoutedEventArgs e) { 
         ModifierMotDePasse modifierMotDePasse = new ModifierMotDePasse();
             modifierMotDePasse.ShowDialog();

@@ -17,15 +17,14 @@ namespace Projet_POO2.Models
     public class Utilisateur : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int _idUtilisateur { get; set; }
+        
+        public int _idUtilisateur;
         public string _nom;
         public string _prenom;
         public string _dateDeNaissance;
         public string _civilite;
-        public string _email { get; set; }
-        public string _motDePasse{ get; set; }
+        public string _email;
+        public string _motDePasse;
 
         public Utilisateur(string nom, string prenom,string dateDeNaissance, string civilite  ,string email, string motDePasse)
         {
@@ -39,6 +38,9 @@ namespace Projet_POO2.Models
 
         }
 
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdUtilisateur
         {
 

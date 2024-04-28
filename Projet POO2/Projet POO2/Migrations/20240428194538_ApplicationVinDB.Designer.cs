@@ -12,7 +12,7 @@ using Projet_POO2.Models;
 namespace Projet_POO2.Migrations
 {
     [DbContext(typeof(ApplicationVinDbContext))]
-    [Migration("20240428155003_ApplicationVinDB")]
+    [Migration("20240428194538_ApplicationVinDB")]
     partial class ApplicationVinDB
     {
         /// <inheritdoc />
@@ -263,11 +263,11 @@ namespace Projet_POO2.Migrations
 
             modelBuilder.Entity("Projet_POO2.Models.Utilisateur", b =>
                 {
-                    b.Property<int>("_idUtilisateur")
+                    b.Property<int>("IdUtilisateur")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("_idUtilisateur"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdUtilisateur"));
 
                     b.Property<string>("Civilite")
                         .IsRequired()
@@ -281,9 +281,6 @@ namespace Projet_POO2.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IdUtilisateur")
-                        .HasColumnType("int");
-
                     b.Property<string>("MotDePasse")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -296,15 +293,7 @@ namespace Projet_POO2.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("_email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("_motDePasse")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("_idUtilisateur");
+                    b.HasKey("IdUtilisateur");
 
                     b.ToTable("Utilisateurs");
                 });

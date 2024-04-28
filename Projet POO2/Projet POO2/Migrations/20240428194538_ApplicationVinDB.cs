@@ -114,11 +114,8 @@ namespace Projet_POO2.Migrations
                 name: "Utilisateurs",
                 columns: table => new
                 {
-                    _idUtilisateur = table.Column<int>(type: "int", nullable: false)
+                    IdUtilisateur = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    _email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    _motDePasse = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IdUtilisateur = table.Column<int>(type: "int", nullable: false),
                     Nom = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Prenom = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateDeNaissance = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -128,7 +125,7 @@ namespace Projet_POO2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Utilisateurs", x => x._idUtilisateur);
+                    table.PrimaryKey("PK_Utilisateurs", x => x.IdUtilisateur);
                 });
 
             migrationBuilder.CreateTable(
