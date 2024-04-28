@@ -93,7 +93,7 @@ namespace Projet_POO2.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Projet POO2;component/views/inprogramwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Projet POO2;V1.0.0.0;component/views/inprogramwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\InProgramWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
