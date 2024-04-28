@@ -33,7 +33,11 @@ namespace Projet_POO2.Models
             this._idProprietaireVignoble = idProprietaireVignoble;
         }
 
-
+        public int IdVignoble
+        {
+            get { return _idVignoble; }
+            set { this._idVignoble = value;}
+        }
         public float Surface
         {
             get { return this._surface; }

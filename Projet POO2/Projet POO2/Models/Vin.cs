@@ -5,18 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.ComponentModel.DataAnnotations;
 
 namespace Projet_POO2.Models
 {
     public class Vin : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        [Key] public int _idVin;
         private string _name;
         private string _type;
         private float _alchool;
         private float _acideCitric;
         private float _sulphates;
         private float _volatileAcidity;
+        private int _qualite;
+        public Qualite Quality { get; set; }
+        public ICollection<Test> Tests { get; set; }
+        public ICollection<TestVin> TestVins { get; set; }
 
 
         public Vin(string name, string type, float alcohol, float acideCitric, float sulphates, float volatileAcidity) {
@@ -29,10 +35,26 @@ namespace Projet_POO2.Models
             this._volatileAcidity = volatileAcidity;
 
         }
+        public Vin(string name, string type, float alcohol, float acideCitric, float sulphates, float volatileAcidity, int qualite) {
+
+            this._name = name;
+            this._type = type;
+            this._alchool = alcohol;
+            this._acideCitric = acideCitric;
+            this._sulphates = sulphates;
+            this._volatileAcidity = volatileAcidity;
+            this._qualite = qualite;
+
+        }
         public Vin()
         {
 
         }
+
+
+
+        public int IdVin { get { return _idVin; } set { this._idVin = value; } }
+
         public string Name
         {
             get { return _name; }
@@ -91,6 +113,12 @@ namespace Projet_POO2.Models
                 this.SetIsValid();
                 OnPropertyChanged();
             }
+        }
+
+        public int Qualite
+        {
+            get { return _qualite; }
+            set { _qualite = value;}
         }
 
         private bool _isValid;
