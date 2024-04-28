@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_POO2.Models
 {
     public class Vin : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        [Key] public int _idVin { get; set; }
+        public int _idVin;
         private string _name;
         private string _type;
         private float _alchool;
@@ -54,7 +55,8 @@ namespace Projet_POO2.Models
         }
 
 
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdVin { get { return _idVin; } set { this._idVin = value;
                 SetIsValidEdit();
                 CheckIdNull();

@@ -260,6 +260,8 @@ namespace Projet_POO2.Models
             context.Vins.Remove(vin);
             context.SaveChanges();
         }
+
+        
         public static void AddTerrain(Models.Terrain terrain)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
@@ -528,6 +530,14 @@ namespace Projet_POO2.Models
             else
             {
                 Console.WriteLine("La qualité avec l'identifiant spécifié n'existe pas.");
+            }
+        }
+        public static List<Models.Vin> GetAllVins()
+        {
+            using (ApplicationVinDbContext context = new ApplicationVinDbContext())
+            {
+                // Retrieve all Vin records from the database
+                return context.Vins.ToList();
             }
         }
 

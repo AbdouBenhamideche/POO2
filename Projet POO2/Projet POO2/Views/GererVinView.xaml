@@ -34,6 +34,7 @@
         <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="8" BorderBrush="Black" BorderThickness="1">
                         <ScrollViewer>
                             <StackPanel x:Name="ListVin">
+                                
                               
                             </StackPanel>
           
@@ -42,6 +43,7 @@
             
                     </Border>
         <Button Grid.Row="5" Grid.Column="5" Content="Ajout Vin" Width="100" Height="30" Margin="0,0,0,0" Click="AjouterVin" />
+        <Button Grid.Row="5" Grid.Column="0" Content="Raflichir" Width="100" Height="30" Margin="0,0,0,0" Click="Raflaichir" />
         <Button Grid.Row="7" Grid.Column="5" Content="Modefier Vin" Width="100" Height="30" Margin="0,0,0,0" Click="ModifierVin" />
         <Button Grid.Row="9" Grid.Column="5" Content="Supprimer Vin" Width="100" Height="30" Margin="0,0,0,0" Click="SupprimerVin" />
 
