@@ -85,7 +85,7 @@ namespace Projet_POO2.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Projet POO2;V1.0.0.0;component/views/ajoutvignoblewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Projet POO2;component/views/ajoutvignoblewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AjoutVignobleWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
