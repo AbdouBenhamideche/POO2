@@ -25,7 +25,7 @@ namespace Projet_POO2.Models
         public ICollection<TestVin> TestVins { get; set; }
 
 
-        public Vin(string name, string type, float alcohol, float acideCitric, float sulphates, float volatileAcidity) {
+        public Vin(string name, string type, float alcohol, float acideCitric, float sulphates, float volatileAcidity, Qualite qualite) {
 
             this._name = name;
             this._type = type;
@@ -44,6 +44,18 @@ namespace Projet_POO2.Models
             this._sulphates = sulphates;
             this._volatileAcidity = volatileAcidity;
             this._qualite = qualite;
+
+        }
+        public Vin(string name, string type, float alcohol, float acideCitric, float sulphates, float volatileAcidity, int qualite,Qualite qualite1) {
+
+            this._name = name;
+            this._type = type;
+            this._alchool = alcohol;
+            this._acideCitric = acideCitric;
+            this._sulphates = sulphates;
+            this._volatileAcidity = volatileAcidity;
+            this._qualite = qualite;
+            this.Quality = qualite1;
 
         }
         public Vin()

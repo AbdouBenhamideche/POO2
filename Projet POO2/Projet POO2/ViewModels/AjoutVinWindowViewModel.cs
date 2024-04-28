@@ -26,8 +26,9 @@ namespace Projet_POO2.ViewModels
         }
         public ICommand VinCommand { get; private set; }
         public void ActionTest() {
-            Models.Vin vin = new Models.Vin(this.Vin.Name, this.Vin.Type, this.Vin.Alcohol, this.Vin.CitricAcid, this.Vin.Sulphates, this.Vin.VolatileAcidity);
-            ListVin.AddToList(vin);
+            Models.Vin vin = new Models.Vin(this.Vin.Name, this.Vin.Type, this.Vin.Alcohol, this.Vin.CitricAcid, this.Vin.Sulphates, this.Vin.VolatileAcidity, new Qualite());
+            ApplicationVinDbContext.AddVin(vin);
+            //ListVin.AddToList(vin);
 
         }
     }

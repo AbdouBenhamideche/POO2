@@ -249,12 +249,7 @@ namespace Projet_POO2.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Vins", x => x._idVin);
-                    table.ForeignKey(
-                        name: "FK_Vins_Qualites_QualityIdQualite",
-                        column: x => x.QualityIdQualite,
-                        principalTable: "Qualites",
-                        principalColumn: "IdQualite",
-                        onDelete: ReferentialAction.Cascade);
+                    
                 });
 
             migrationBuilder.CreateTable(

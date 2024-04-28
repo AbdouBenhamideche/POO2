@@ -389,9 +389,7 @@ namespace Projet_POO2.Migrations
 
                     b.HasKey("_idVin");
 
-                    b.HasIndex("QualityIdQualite");
-
-                    b.ToTable("Vins");
+                    
                 });
 
             modelBuilder.Entity("Projet_POO2.Models.VinBlanc", b =>
