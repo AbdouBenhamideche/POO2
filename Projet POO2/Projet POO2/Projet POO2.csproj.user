@@ -19,6 +19,9 @@
     <Compile Update="Views\InProgramWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ModifierMotDePasse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\AjoutTerrainWindow.xaml">
@@ -34,6 +37,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ModifierMotDePasse.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

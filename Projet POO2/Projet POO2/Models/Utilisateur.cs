@@ -128,6 +128,21 @@ namespace Projet_POO2.Models
          HasAtLeast8Characters(MotDePasse);
          ;
         }
+
+
+        private bool _verifierMotDePasse;
+        public bool VerifierMotDePasse
+        {
+            get { return this._verifierInfosInscription; }
+        }
+
+        private void SetVerifierMotDePasse()
+        {
+            this._verifierMotDePasse = !string.IsNullOrEmpty(MotDePasse) &&
+         HasAtLeast8Characters(MotDePasse);
+            ;
+        }
+
         private void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

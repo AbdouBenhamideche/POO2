@@ -51,6 +51,13 @@ namespace Projet_POO2.Views
         AjoutTerrainWindow ajoutTerrainWindow = new AjoutTerrainWindow();
             ajoutTerrainWindow.ShowDialog();
         }
+        public void Annuler(object sender, RoutedEventArgs e) { }
+        public void Confirmer(object sender, RoutedEventArgs e) { }
+        public void ModifierMotDePasse(object sender, RoutedEventArgs e) { 
+        ModifierMotDePasse modifierMotDePasse = new ModifierMotDePasse();
+            modifierMotDePasse.ShowDialog();
+        
+        }
 
     }
 }

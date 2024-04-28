@@ -31,3 +31,5 @@ C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-wi
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\AjoutTerrainWindow.baml
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\AjoutVignobleWindow.g.cs
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\AjoutVignobleWindow.baml
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\ModifierMotDePasse.g.cs
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\ModifierMotDePasse.baml

@@ -175,7 +175,7 @@
                             <!-- Contenu disposé verticalement -->
 
                             <PasswordBox  x:Name="txtMotDePasse" Width="150"  IsEnabled="false"/>
-                        <Button Content="Modifier" Width="100" Height="30" Margin="20,0,0,0"  />
+                            <Button Content="Modifier" Width="100" Height="30" Margin="20,0,0,0"  Click="ModifierMotDePasse"/>
 
                            
                         </StackPanel>
@@ -185,8 +185,8 @@
                         <!-- Contenu disposé verticalement -->
 
 
-                        <Button Content="Annuler"   Width="100" Height="30" Margin="20,0,0,0"  />
-                        <Button Content="Conifrmer"  Width="100" Height="30" Margin="20,0,0,0"  />
+                        <Button Content="Annuler"   Width="100" Height="30" Margin="20,0,0,0"  Click="Annuler"/>
+                        <Button Content="Conifrmer"  Width="100" Height="30" Margin="20,0,0,0" Click="Confirmer" />
 
 
                     </StackPanel>
