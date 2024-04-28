@@ -12,7 +12,7 @@ namespace Projet_POO2.Models
     public class Vin : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        [Key] public int _idVin;
+        [Key] public int _idVin { get; set; }
         private string _name;
         private string _type;
         private float _alchool;

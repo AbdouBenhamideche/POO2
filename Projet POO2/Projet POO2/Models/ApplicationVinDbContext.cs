@@ -29,7 +29,7 @@ namespace Projet_POO2.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextoptionsBuilder)
         {
-            string connection_string = "Data Source=(localdb)\\ProjectModels;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string connection_string = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
             string database_name = "ApplicationVinDb";
             dbContextoptionsBuilder.UseSqlServer($"{connection_string}; Database={database_name};");
         }
@@ -48,13 +48,13 @@ namespace Projet_POO2.Models
 
 
 
-        static void AddClient(Models.Client client)
+        public static void AddClient(Models.Client client)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             context.Clients.Add(client);
             context.SaveChanges();
         }
-        static void DeleteClient(int idClient)
+        public static void DeleteClient(int idClient)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Client client = context.Clients.Find(idClient);
@@ -69,13 +69,13 @@ namespace Projet_POO2.Models
                 Console.WriteLine("Le client avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void AddProprietaireVignoble(Models.ProprietaireVignoble proprietaire)
+        public static void AddProprietaireVignoble(Models.ProprietaireVignoble proprietaire)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             context.ProprietaireVignobles.Add(proprietaire);
             context.SaveChanges();
         }
-        static void DeleteProprietaireVignoble(int idProprietaire)
+        public static void DeleteProprietaireVignoble(int idProprietaire)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.ProprietaireVignoble proprietaire = context.ProprietaireVignobles.Find(idProprietaire);
@@ -90,21 +90,22 @@ namespace Projet_POO2.Models
                 Console.WriteLine("Le client avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void AddUser(Models.Utilisateur utilisateur)
+        public static void AddUser(Models.Utilisateur utilisateur)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             context.Utilisateurs.Add(utilisateur);
             context.SaveChanges();
         }
 
-        static void ShowUsers()
+        public static List<Models.Utilisateur> ShowUsers()
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             List<Models.Utilisateur> utilisateurs = context.Utilisateurs.ToList();
+            return utilisateurs;
 
         }
 
-        static void ShowUser(int idUtilisateur)
+        public static void ShowUser(int idUtilisateur)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Utilisateur utilisateur = context.Utilisateurs.Find(idUtilisateur);
@@ -131,7 +132,7 @@ namespace Projet_POO2.Models
             return false;
         }
 
-        static void UpdateUser(int identifiant, string nom, string prenom, string dateDeNaissance, string civilite, string email, string motDePasse)
+        public static void UpdateUser(int identifiant, string nom, string prenom, string dateDeNaissance, string civilite, string email, string motDePasse)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Utilisateur utilisateur = context.Utilisateurs.Find(identifiant);
@@ -151,7 +152,7 @@ namespace Projet_POO2.Models
                 Console.WriteLine("L'utilisateur avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void DeleteUser(int idUtilisateur)
+        public static void DeleteUser(int idUtilisateur)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Utilisateur utilisateur = context.Utilisateurs.Find(idUtilisateur);
@@ -166,14 +167,24 @@ namespace Projet_POO2.Models
                 Console.WriteLine("L'utilisateur avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void AddQualite(Models.Qualite qualite)
+        public static bool UserExistsWithEmail(string email)
+        {
+            using (var context = new ApplicationVinDbContext())
+            {
+                return context.Utilisateurs.Any(u => u.Email == email);
+            }
+        }
+
+
+
+        public static void AddQualite(Models.Qualite qualite)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             context.Qualites.Add(qualite);
             context.SaveChanges();
 
         }
-        static void DeleteQualite(int idQualite)
+        public static void DeleteQualite(int idQualite)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Qualite qualite = context.Qualites.Find(idQualite);
@@ -181,13 +192,13 @@ namespace Projet_POO2.Models
             context.SaveChanges();
         }
 
-        static void AddVin(Models.Vin vin)
+        public static void AddVin(Models.Vin vin)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             context.Vins.Add(vin);
             context.SaveChanges();
         }
-        static void UpdateVin(int idVin, float alcohol, float sulphates, float citricAcid, float volatileAcidity, int quality)
+        public static void UpdateVin(int idVin, float alcohol, float sulphates, float citricAcid, float volatileAcidity, int quality)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Vin vin = context.Vins.Find(idVin);
@@ -207,20 +218,20 @@ namespace Projet_POO2.Models
                 Console.WriteLine("Le vin avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void DeleteVin(int idVin)
+        public static void DeleteVin(int idVin)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Vin vin = context.Vins.Find(idVin);
             context.Vins.Remove(vin);
             context.SaveChanges();
         }
-        static void AddTerrain(Models.Terrain terrain)
+        public static void AddTerrain(Models.Terrain terrain)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             context.Terrains.Add(terrain);
             context.SaveChanges();
         }
-        static void UpdateTerrain(int idTerrain, float surface, string emplacement)
+        public static void UpdateTerrain(int idTerrain, float surface, string emplacement)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Terrain terrain = context.Terrains.Find(idTerrain);
@@ -236,7 +247,7 @@ namespace Projet_POO2.Models
                 Console.WriteLine("Le terrain avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void DeleteTerrain(int idTerrain)
+        public static void DeleteTerrain(int idTerrain)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Terrain terrain = context.Terrains.Find(idTerrain);
@@ -251,14 +262,14 @@ namespace Projet_POO2.Models
                 Console.WriteLine("Le terrain avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void AddVignoble(Models.Vignoble vignoble)
+        public static void AddVignoble(Models.Vignoble vignoble)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             context.Vignobles.Add(vignoble);
             context.SaveChanges();
         }
 
-        static void UpdateVignoble(int idVignoble, float surface, string emplacement, int idProprietaireVignoble, int idTerrain)
+        public static void UpdateVignoble(int idVignoble, float surface, string emplacement, int idProprietaireVignoble, int idTerrain)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Vignoble vignoble = context.Vignobles.Find(idVignoble);
@@ -278,7 +289,7 @@ namespace Projet_POO2.Models
             }
         }
 
-        static void DeleteVignoble(int idVignoble)
+        public static void DeleteVignoble(int idVignoble)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Vignoble vignoble = context.Vignobles.Find(idVignoble);
@@ -293,14 +304,14 @@ namespace Projet_POO2.Models
                 Console.WriteLine("Le vignoble avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void AddTest(Models.Test test)
+        public static void AddTest(Models.Test test)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             context.Tests.Add(test);
             context.SaveChanges();
         }
 
-        static void UpdateTest(int idTest, string nom, string description)
+        public static void UpdateTest(int idTest, string nom, string description)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Test test = context.Tests.Find(idTest);
@@ -316,7 +327,7 @@ namespace Projet_POO2.Models
                 Console.WriteLine("Le test avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void DeleteTest(int idTest)
+        public static void DeleteTest(int idTest)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Test test = context.Tests.Find(idTest);
@@ -331,7 +342,7 @@ namespace Projet_POO2.Models
                 Console.WriteLine("Le test avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void AddTestToVin(int idVin, Models.Test test)
+        public static void AddTestToVin(int idVin, Models.Test test)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Vin vin = context.Vins.Include(v => v.Tests).Where(v => v.IdVin == idVin).First();
@@ -339,7 +350,7 @@ namespace Projet_POO2.Models
             context.SaveChanges();
 
         }
-        static void DeleteTestFromVin(int idVin, int idTest)
+        public static void DeleteTestFromVin(int idVin, int idTest)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
 
@@ -364,7 +375,7 @@ namespace Projet_POO2.Models
                 Console.WriteLine("Le vin avec l'identifiant spécifié n'existe pas.");
             }
         }
-        static void ShowTestsOfVin(int idVin)
+        public static void ShowTestsOfVin(int idVin)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
 
@@ -391,7 +402,7 @@ namespace Projet_POO2.Models
 
 
 
-        static void AddVignobleToProprietaire(int idProprietaire, Models.Vignoble vignoble)
+        public static void AddVignobleToProprietaire(int idProprietaire, Models.Vignoble vignoble)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.ProprietaireVignoble proprietaire = context.ProprietaireVignobles.Find(idProprietaire);
@@ -406,7 +417,7 @@ namespace Projet_POO2.Models
             }
         }
 
-        static void DeleteVignobleFromProprietaire(int idVignoble, int idProprietaire)
+        public static void DeleteVignobleFromProprietaire(int idVignoble, int idProprietaire)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.ProprietaireVignoble proprietaire = context.ProprietaireVignobles.Find(idProprietaire);
@@ -429,7 +440,7 @@ namespace Projet_POO2.Models
             }
         }
 
-        static void ShowVignoblesOfProprietaire(int idProprietaireVignoble)
+        public static void ShowVignoblesOfProprietaire(int idProprietaireVignoble)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.ProprietaireVignoble proprietaire = context.ProprietaireVignobles.Include(p => p.Vignobles).FirstOrDefault(p => p.IdProprietaire == idProprietaireVignoble);
@@ -447,7 +458,7 @@ namespace Projet_POO2.Models
             }
         }
 
-        static void AddVinToQualite(int idQualite, Models.Vin vin)
+        public static void AddVinToQualite(int idQualite, Models.Vin vin)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Qualite qualite = context.Qualites.Find(idQualite);
@@ -462,7 +473,7 @@ namespace Projet_POO2.Models
             }
         }
 
-        static void DeleteVinFromQualite(int idVin, int idQualite)
+        public static void DeleteVinFromQualite(int idVin, int idQualite)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Qualite qualite = context.Qualites.Find(idQualite);
@@ -485,7 +496,7 @@ namespace Projet_POO2.Models
             }
         }
 
-        static void ShowVinsOfQualite(int idQualite)
+        public static void ShowVinsOfQualite(int idQualite)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Qualite qualite = context.Qualites.Include(q => q.Vins).FirstOrDefault(q => q.IdQualite == idQualite);

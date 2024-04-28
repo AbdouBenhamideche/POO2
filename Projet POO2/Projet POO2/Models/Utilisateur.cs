@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -15,7 +17,9 @@ namespace Projet_POO2.Models
     public class Utilisateur : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public int _identifiant;
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int _idUtilisateur { get; set; }
         public string _nom;
         public string _prenom;
         public string _dateDeNaissance;
@@ -33,7 +37,12 @@ namespace Projet_POO2.Models
             this._motDePasse = motDePasse;
         }
 
+        public int IdUtilisateur
+        {
 
+            get { return _idUtilisateur; }
+            set { _idUtilisateur = value; }
+        }
         public string Nom
         {
             get { return _nom; }

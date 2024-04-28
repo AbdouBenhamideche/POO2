@@ -1,4 +1,5 @@
 ﻿using GestionVin;
+using Projet_POO2.Models;
 using Projet_POO2.Views;
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,18 @@ namespace Projet_POO2.ViewModels
         public ICommand InscriptionCommande { get;private set; }
         public void Inscreption()
         {
-            MessageBox.Show(Utilisateur.MotDePasse);
+            if (!ApplicationVinDbContext.UserExistsWithEmail(Utilisateur.Email)) { 
+            MessageBox.Show($"Bienvenu {Utilisateur.Prenom} {Utilisateur.Nom} Relancer le programme Ouvrez L'onglet Connexion et connectez vous pour continuer");
+            ApplicationVinDbContext.AddUser(Utilisateur);
+                _mainWindow.Close();
+            }
+            else
+            {
+                MessageBox.Show($"Utilisateur existe Deja");
+            }
             
+           
+
         }
     }
     //public class ConnexionViewModel
