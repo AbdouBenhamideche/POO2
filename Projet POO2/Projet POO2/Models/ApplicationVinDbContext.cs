@@ -148,10 +148,10 @@ namespace Projet_POO2.Models
             return utilisateur;
         }
 
-        public static void UpdateUser(string nom, string prenom,string mail, string dateDeNaissance)
+        public static void UpdateUser(string nom, string prenom,int id, string dateDeNaissance)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
-            Models.Utilisateur utilisateur = context.Utilisateurs.Find(mail);
+            Models.Utilisateur utilisateur = context.Utilisateurs.Find(id);
 
             if (utilisateur != null)
             {
@@ -168,10 +168,10 @@ namespace Projet_POO2.Models
         }
 
 
-        public static void UpdateUserPassword(string mail, string motDePasse)
+        public static void UpdateUserPassword(int id, string motDePasse)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
-            Models.Utilisateur utilisateur = context.Utilisateurs.Find(mail);
+            Models.Utilisateur utilisateur = context.Utilisateurs.Find(id);
 
             if (utilisateur != null)
             {

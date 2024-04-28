@@ -28,8 +28,9 @@ namespace Projet_POO2.Views
             Utilisateur user = new Utilisateur();
             user = ApplicationVinDbContext.GetUserByEmail(MainWindow.x);
             
+            
 
-            MessageAccueil.Text = $"            Bienvenue {user.Prenom} {user.Nom} dans notre application de gestion du vin !Découvrez une expérience unique pour explorer, cataloguer, apprécier et évaluer la qualité d'une large sélection de vins. Que vous soyez un amateur passionné ou un professionnel du vin, notre application vous offre les outils nécessaires pour enrichir votre expérience vinicole. \r\n";
+            MessageAccueil.Text = $"            Bienvenue {user.Prenom} {user.IdUtilisateur} {user.Nom} dans notre application de gestion du vin !Découvrez une expérience unique pour explorer, cataloguer, apprécier et évaluer la qualité d'une large sélection de vins. Que vous soyez un amateur passionné ou un professionnel du vin, notre application vous offre les outils nécessaires pour enrichir votre expérience vinicole. \r\n";
         }
 
         public void AjouterVin(object sender, RoutedEventArgs e)

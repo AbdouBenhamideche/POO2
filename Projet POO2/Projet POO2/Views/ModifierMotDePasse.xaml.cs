@@ -39,7 +39,7 @@ namespace Projet_POO2.Views
                 }
                 else
                 {
-                    ApplicationVinDbContext.UpdateUserPassword(MainWindow.x, password2);
+                    ApplicationVinDbContext.UpdateUserPassword(user.IdUtilisateur, password2);
                     MessageBox.Show("Nouveau mot de passe a été attribué");
                 }
 
