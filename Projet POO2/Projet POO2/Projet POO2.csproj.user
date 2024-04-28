@@ -16,10 +16,19 @@
     <Compile Update="Views\AjoutVinWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\GererVinView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\InProgramWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ModifierMotDePasse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ModifierVinWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SupprimerVinWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -33,6 +42,9 @@
     <Page Update="Views\AjoutVinWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\GererVinView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\InProgramWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -40,6 +52,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ModifierMotDePasse.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ModifierVinWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SupprimerVinWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

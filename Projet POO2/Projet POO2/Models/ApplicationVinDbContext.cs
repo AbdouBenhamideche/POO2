@@ -426,7 +426,7 @@ namespace Projet_POO2.Models
                 foreach (TestVin testVin in testsVin)
                 {
                     Console.WriteLine($" - Test ID: {testVin.Test.IdTest}, Nom: {testVin.Test.Nom}, Description: {testVin.Test.Description}");
-                    Console.WriteLine($"   Vin associé - ID: {testVin.Vin.IdVin}, Alcohol: {testVin.Vin.Alcohol}, Citric Acid: {testVin.Vin.CitricAcid}, Sulphates: {testVin.Vin.Sulphates}, Volatile Acidity: {testVin.Vin.VolatileAcidity}, Quality: {testVin.Vin.Quality}");
+                    Console.WriteLine($"   Vin associé - ID: {testVin.Vin.IdVin}, Alcohol: {testVin.Vin.Alcohol}, Citric Acid: {testVin.Vin.CitricAcid}, Sulphates: {testVin.Vin.Sulphates}, Volatile Acidity: {testVin.Vin.VolatileAcidity}");
                 }
             }
             else
@@ -540,7 +540,7 @@ namespace Projet_POO2.Models
                 Console.WriteLine($"Vins associés à la qualité avec l'identifiant {idQualite}:");
                 foreach (Models.Vin vin in qualite.Vins)
                 {
-                    Console.WriteLine($" - ID: {vin.IdVin}, Alcohol: {vin.Alcohol}%, Sulphates: {vin.Sulphates}, Citric Acid: {vin.CitricAcid}, Volatile Acidity: {vin.VolatileAcidity}, Quality: {vin.Quality}");
+                    Console.WriteLine($" - ID: {vin.IdVin}, Alcohol: {vin.Alcohol}%, Sulphates: {vin.Sulphates}, Citric Acid: {vin.CitricAcid}, Volatile Acidity: {vin.VolatileAcidity}");
                 }
             }
             else

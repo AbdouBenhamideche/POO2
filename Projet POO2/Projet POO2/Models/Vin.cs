@@ -21,6 +21,7 @@ namespace Projet_POO2.Models
         private float _volatileAcidity;
         private int _qualite;
         public Qualite Quality { get; set; }
+
         public ICollection<Test> Tests { get; set; }
         public ICollection<TestVin> TestVins { get; set; }
 
@@ -46,18 +47,7 @@ namespace Projet_POO2.Models
             this._qualite = qualite;
 
         }
-        public Vin(string name, string type, float alcohol, float acideCitric, float sulphates, float volatileAcidity, int qualite,Qualite qualite1) {
-
-            this._name = name;
-            this._type = type;
-            this._alchool = alcohol;
-            this._acideCitric = acideCitric;
-            this._sulphates = sulphates;
-            this._volatileAcidity = volatileAcidity;
-            this._qualite = qualite;
-            this.Quality = qualite1;
-
-        }
+        
         public Vin()
         {
 
@@ -65,7 +55,11 @@ namespace Projet_POO2.Models
 
 
 
-        public int IdVin { get { return _idVin; } set { this._idVin = value; } }
+        public int IdVin { get { return _idVin; } set { this._idVin = value;
+                SetIsValidEdit();
+                CheckIdNull();
+                OnPropertyChanged();
+            } }
 
         public string Name
         {
@@ -73,6 +67,7 @@ namespace Projet_POO2.Models
             set {
                 _name = value;
                 this.SetIsValid();
+                SetIsValidEdit();
                 OnPropertyChanged();
             }
         }
@@ -83,6 +78,7 @@ namespace Projet_POO2.Models
             get { return _type; }
             set { _type = value;
                 this.SetIsValid();
+                SetIsValidEdit();
                 OnPropertyChanged();
             }
         }
@@ -93,6 +89,7 @@ namespace Projet_POO2.Models
             get { return _alchool; }
             set { _alchool = value;
                 this.SetIsValid();
+                SetIsValidEdit();
                 OnPropertyChanged();
             }
         }
@@ -103,6 +100,7 @@ namespace Projet_POO2.Models
             get { return _acideCitric ; }
             set { _acideCitric = value;
                 this.SetIsValid();
+                SetIsValidEdit();
                 OnPropertyChanged();
             }
         }
@@ -113,6 +111,7 @@ namespace Projet_POO2.Models
             get { return _sulphates; }
             set { _sulphates = value;
                 this.SetIsValid();
+                SetIsValidEdit();
                 OnPropertyChanged();
             }
         }
@@ -123,6 +122,7 @@ namespace Projet_POO2.Models
             get { return _volatileAcidity; }
             set { _volatileAcidity = value;
                 this.SetIsValid();
+                SetIsValidEdit();
                 OnPropertyChanged();
             }
         }
@@ -134,10 +134,18 @@ namespace Projet_POO2.Models
         }
 
         private bool _isValid;
+        private bool _isValid1;
+        private bool _isValid2;
 
         public bool IsValid
         {
             get { return this._isValid; }
+        }public bool IsValid1
+        {
+            get { return this._isValid1; }
+        }public bool IsValid2
+        {
+            get { return this._isValid2; }
         }
         private void SetIsValid()
         {
@@ -147,6 +155,17 @@ namespace Projet_POO2.Models
         private void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        private void SetIsValidEdit()
+        {
+            this._isValid1 = !string.IsNullOrEmpty(Name) &&
+           !string.IsNullOrEmpty(Type) &&
+           (this.IdVin != 0);
+        }
+        private void CheckIdNull()
+        {
+            this._isValid2 = 
+           (this.IdVin != 0);
         }
 
     }

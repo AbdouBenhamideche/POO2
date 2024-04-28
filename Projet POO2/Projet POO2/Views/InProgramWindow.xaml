@@ -64,6 +64,8 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -72,19 +74,19 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Liste des entités" FontSize="16" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="0"/>
-                    <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="4" BorderBrush="Black" BorderThickness="1">
+                    <TextBlock Text="Liste des entités" FontSize="16" FontWeight="Bold" Margin="5" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <!--<Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="4" BorderBrush="Black" BorderThickness="1">
                         <ScrollViewer>
                             <StackPanel x:Name="ListVin">
                               
                             </StackPanel>
 
-                            <!-- Content of the scrollable area here -->
+                            --><!-- Content of the scrollable area here --><!--
                         </ScrollViewer>
-                    </Border>
-                    <Button Grid.Row="2" Grid.Column="4" Content="Ajouter vignoble" Width="100" Height="30" Margin="0,0,0,0" Click="AjouterVignoble" />
-                    <Button Grid.Row="3" Grid.Column="4" Content="Ajouter terrain" Width="100" Height="30" Margin="0,0,0,0" Click="AjouterTerrain" />
-                    <Button Grid.Row="5" Grid.Column="4" Content="Ajouter vin" Width="100" Height="30" Margin="0,0,0,0" Click="AjouterVin" />
+                    </Border>-->
+                    <Button Grid.Row="1" Grid.Column="1" Content="Gerer vignoble" Width="100" Height="30" Margin="0,0,0,0" Click="GererVignoble" />
+                    <Button Grid.Row="1" Grid.Column="3" Content="Gerer terrain" Width="100" Height="30" Margin="0,0,0,0" Click="GererTerrain" />
+                    <Button Grid.Row="1" Grid.Column="5" Content="Gerer vin" Width="100" Height="30" Margin="0,0,0,0" Click="GererVin" />
 
 
                 </Grid>

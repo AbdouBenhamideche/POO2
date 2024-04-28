@@ -34,30 +34,30 @@ namespace Projet_POO2.Views
             MessageAccueil.Text = $"            Bienvenue {user.Prenom}  {user.Nom} dans notre application de gestion du vin !Découvrez une expérience unique pour explorer, cataloguer, apprécier et évaluer la qualité d'une large sélection de vins. Que vous soyez un amateur passionné ou un professionnel du vin, notre application vous offre les outils nécessaires pour enrichir votre expérience vinicole. \r\n";
         }
 
-        public void AjouterVin(object sender, RoutedEventArgs e)
+        public void GererVin(object sender, RoutedEventArgs e)
         {
-            AjoutVinWindow ajoutVinWindow = new AjoutVinWindow();
-            ajoutVinWindow.ShowDialog();
+            GererVinView gererVin = new GererVinView();
+            gererVin.Show();
 
-            ListVin.Children.Clear();
-            foreach (var ent in Models.ListVin.VinList)
-            {
-                // Créez un bouton
-                Button button = new Button();
+            //ListVin.Children.Clear();
+            //foreach (var ent in Models.ListVin.VinList)
+            //{
+            //    // Créez un bouton
+            //    Button button = new Button();
 
-                // Définissez le contenu du bouton
-                button.Content = ent.Name;
+            //    // Définissez le contenu du bouton
+            //    button.Content = ent.Name;
 
-                // Ajoutez le bouton au StackPanel
-                ListVin.Children.Add(button);
-            }
+            //    // Ajoutez le bouton au StackPanel
+            //    ListVin.Children.Add(button);
+            //}
 
         }
-        public void AjouterVignoble(object sender, RoutedEventArgs e) {
+        public void GererVignoble(object sender, RoutedEventArgs e) {
             AjoutVignobleWindow ajoutVignobleWindow = new AjoutVignobleWindow();
             ajoutVignobleWindow.ShowDialog();
         }
-        public void AjouterTerrain(object sender, RoutedEventArgs e) {
+        public void GererTerrain(object sender, RoutedEventArgs e) {
         AjoutTerrainWindow ajoutTerrainWindow = new AjoutTerrainWindow();
             ajoutTerrainWindow.ShowDialog();
         }

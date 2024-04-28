@@ -83,3 +83,9 @@ C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-wi
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\GererVinView.g.cs
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\GererVinView.baml
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\ModifierVinWindow.g.cs
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\SupprimerVinWindow.g.cs
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\ModifierVinWindow.baml
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\SupprimerVinWindow.baml
