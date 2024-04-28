@@ -82,7 +82,9 @@
                             <!-- Content of the scrollable area here -->
                         </ScrollViewer>
                     </Border>
-                    <Button Grid.Row="5" Grid.Column="4" Content="Ajouter" Width="100" Height="30" Margin="0,0,0,0" Click="AjouterVin" />
+                    <Button Grid.Row="2" Grid.Column="4" Content="Ajouter vignoble" Width="100" Height="30" Margin="0,0,0,0" Click="AjouterVignoble" />
+                    <Button Grid.Row="3" Grid.Column="4" Content="Ajouter terrain" Width="100" Height="30" Margin="0,0,0,0" Click="AjouterTerrain" />
+                    <Button Grid.Row="5" Grid.Column="4" Content="Ajouter vin" Width="100" Height="30" Margin="0,0,0,0" Click="AjouterVin" />
 
 
                 </Grid>

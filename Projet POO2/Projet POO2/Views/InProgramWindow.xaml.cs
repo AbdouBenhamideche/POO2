@@ -43,5 +43,14 @@ namespace Projet_POO2.Views
             }
 
         }
+        public void AjouterVignoble(object sender, RoutedEventArgs e) {
+            AjoutVignobleWindow ajoutVignobleWindow = new AjoutVignobleWindow();
+            ajoutVignobleWindow.ShowDialog();
+        }
+        public void AjouterTerrain(object sender, RoutedEventArgs e) {
+        AjoutTerrainWindow ajoutTerrainWindow = new AjoutTerrainWindow();
+            ajoutTerrainWindow.ShowDialog();
+        }
+
     }
 }

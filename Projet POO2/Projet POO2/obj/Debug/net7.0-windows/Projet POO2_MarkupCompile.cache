@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\App.xaml
-31000059189
+5-1740776519
 1-896962078
-111665999806
+18-164525522
 199-1113494152
-Views\AjoutEntiteWindow.xaml;Views\InProgramWindow.xaml;Views\MainWindow.xaml;
+Views\AjoutTerrainWindow.xaml;Views\AjoutVignobleWindow.xaml;Views\AjoutVinWindow.xaml;Views\InProgramWindow.xaml;Views\MainWindow.xaml;
 
 False
 

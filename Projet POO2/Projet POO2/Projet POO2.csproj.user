@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\AjoutEntiteWindow.xaml.cs">
+    <Compile Update="Views\AjoutTerrainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AjoutVignobleWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AjoutVinWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\InProgramWindow.xaml.cs">
@@ -15,7 +21,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\AjoutEntiteWindow.xaml">
+    <Page Update="Views\AjoutTerrainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AjoutVignobleWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AjoutVinWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\InProgramWindow.xaml">

@@ -1,0 +1,43 @@
+﻿<Window x:Class="Projet_POO2.Views.AjoutVignobleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_POO2.Views"
+        mc:Ignorable="d"
+        Title="AjoutVignobleWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Ajouter des informations sur le Vignoble" Grid.Row="0" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,10"/>
+
+        <Label Content="Surphace du Vignoble  :" Grid.Row="1" Margin="10"/>
+        <TextBox Text="{Binding Vignoble.Surface, UpdateSourceTrigger=PropertyChanged}" x:Name="SurfaceVignoble" Grid.Row="1" Margin="120,10,10,10" />
+
+
+
+        <Label Content="Emplacement :" Grid.Row="3" Margin="10"/>
+        <TextBox Text="{Binding Vignoble.Emplacement, UpdateSourceTrigger=PropertyChanged}" x:Name="Emplacement" Grid.Row="3" Margin="120,10,10,10" />
+
+        <Label Content="ID Poprietaire :" Grid.Row="4" Margin="10"/>
+        <TextBox Text="{Binding Vignoble.IdProprietaireVignoble, UpdateSourceTrigger=PropertyChanged}" x:Name="IdProprietaire" Grid.Row="4" Margin="120,10,10,10" />
+
+        <Label Content="ID Terrain:" Grid.Row="5" Margin="10"/>
+        <TextBox Text="{Binding Vignoble.IdTerrain, UpdateSourceTrigger=PropertyChanged}" x:Name="IdTerrain" Grid.Row="5" Margin="120,10,10,10" />
+
+        <!-- Boutons OK et Annuler -->
+        <StackPanel Orientation="Horizontal" Grid.Row="8" HorizontalAlignment="Center" Margin="0,20">
+            <Button Content="OK" Width="100" Margin="10"  Command="{Binding VignobleCommand}"/>
+            <Button Content="Annuler" Width="100" Margin="10" Click="Annuler"/>
+        </StackPanel>
+    </Grid>
+</Window>
