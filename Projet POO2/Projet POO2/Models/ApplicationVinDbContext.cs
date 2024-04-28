@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -90,6 +91,10 @@ namespace Projet_POO2.Models
                 Console.WriteLine("Le client avec l'identifiant spécifié n'existe pas.");
             }
         }
+
+       
+
+        
         public static void AddUser(Models.Utilisateur utilisateur)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
@@ -102,13 +107,14 @@ namespace Projet_POO2.Models
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             List<Models.Utilisateur> utilisateurs = context.Utilisateurs.ToList();
             return utilisateurs;
-
+            
         }
 
         public static void ShowUser(int idUtilisateur)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Utilisateur utilisateur = context.Utilisateurs.Find(idUtilisateur);
+            context.SaveChanges();
 
         }
         public static bool AuthenticateUser(string email, string motDePasse)

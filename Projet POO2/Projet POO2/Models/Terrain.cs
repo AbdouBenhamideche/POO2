@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet_POO2.Models
 {
@@ -13,7 +14,9 @@ namespace Projet_POO2.Models
    
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        [Key] public int _idTerrain { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
+        public int _idTerrain { get; set; }
         public float _surface { get; set; }
         public string _emplacement { get; set; }
         public ICollection<Models.Vignoble> vignobles { get; set; }

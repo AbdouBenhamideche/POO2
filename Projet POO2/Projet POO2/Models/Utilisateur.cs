@@ -35,6 +35,8 @@ namespace Projet_POO2.Models
             this._civilite = civilite;
             this._email = email;
             this._motDePasse = motDePasse;
+            //_idUtilisateur = ApplicationVinDbContext.FindMaxIdUser(ApplicationVinDbContext.ShowUsers()) + 1;
+
         }
 
         public int IdUtilisateur

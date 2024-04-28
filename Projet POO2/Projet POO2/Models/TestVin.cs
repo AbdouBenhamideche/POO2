@@ -10,7 +10,9 @@ namespace Projet_POO2.Models
 {
     public class TestVin
     {
-        [Key] public int IdTestVin { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
+        public int IdTestVin { get; set; }
         [ForeignKey("IdTest")] public Test Test { get; set; }
         [ForeignKey("IdVin")] public Vin Vin { get; set; }
     }

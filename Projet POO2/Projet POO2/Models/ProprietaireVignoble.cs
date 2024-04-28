@@ -4,13 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace Projet_POO2.Models
 {
     public class ProprietaireVignoble
     {
 
-        [Key] public int IdProprietaire { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
+        public int IdProprietaire { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public DateTime DateDeNaissance { get; set; }
