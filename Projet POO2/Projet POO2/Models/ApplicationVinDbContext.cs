@@ -138,19 +138,27 @@ namespace Projet_POO2.Models
             return false;
         }
 
-        public static void UpdateUser(int identifiant, string nom, string prenom, string dateDeNaissance, string civilite, string email, string motDePasse)
+        public static Models.Utilisateur GetUserByEmail(string email)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
-            Models.Utilisateur utilisateur = context.Utilisateurs.Find(identifiant);
+
+            // Retrieve the user by email
+            Models.Utilisateur utilisateur = context.Utilisateurs.FirstOrDefault(u => u.Email == email);
+
+            return utilisateur;
+        }
+
+        public static void UpdateUser(string nom, string prenom,string mail, string dateDeNaissance)
+        {
+            ApplicationVinDbContext context = new ApplicationVinDbContext();
+            Models.Utilisateur utilisateur = context.Utilisateurs.Find(mail);
 
             if (utilisateur != null)
             {
                 utilisateur.Nom = nom;
                 utilisateur.Prenom = prenom;
                 utilisateur.DateDeNaissance = dateDeNaissance;
-                utilisateur.Civilite = civilite;
-                utilisateur.Email = email;
-                utilisateur.MotDePasse = motDePasse;
+                
                 context.SaveChanges();
             }
             else
@@ -158,6 +166,27 @@ namespace Projet_POO2.Models
                 Console.WriteLine("L'utilisateur avec l'identifiant spécifié n'existe pas.");
             }
         }
+
+
+        public static void UpdateUserPassword(string mail, string motDePasse)
+        {
+            ApplicationVinDbContext context = new ApplicationVinDbContext();
+            Models.Utilisateur utilisateur = context.Utilisateurs.Find(mail);
+
+            if (utilisateur != null)
+            {
+                utilisateur.MotDePasse = motDePasse;
+
+                context.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine("L'utilisateur avec l'identifiant spécifié n'existe pas.");
+            }
+        }
+
+
+
         public static void DeleteUser(int idUtilisateur)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();

@@ -1,10 +1,12 @@
-﻿using Projet_POO2.Models;
+﻿using Microsoft.Identity.Client;
+using Projet_POO2.Models;
 using Projet_POO2.ViewModels;
 using Projet_POO2.Views;
 using System;
 using System.Collections.Generic;
 using System.IO.Packaging;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,6 +37,9 @@ namespace GestionVin
             get { return mail; }
             set { password = value; }
         }
+
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -43,17 +48,19 @@ namespace GestionVin
         public InProgramWindow inProgramWindow;
         public void Inscription_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
         public void Connexion_Click(object sender, RoutedEventArgs e) {
             string mail = txtEmailConnnexion.Text;
-            if (ApplicationVinDbContext.AuthenticateUser(mail,password))
+            if (ApplicationVinDbContext.AuthenticateUser(mail, password))
             {
-                this.Mail= mail;
-                System.Windows.MessageBox.Show(password);
+                this.Mail = mail;
+                InformationUtilisateurConnecte informationUtilisateurConnecte = new InformationUtilisateurConnecte();
+                informationUtilisateurConnecte.Mail = mail;
+                x = informationUtilisateurConnecte.Mail;
                 inProgramWindow = new InProgramWindow();
                 inProgramWindow.Show();
-                
+
                 this.Close();
 
             }
@@ -61,8 +68,9 @@ namespace GestionVin
             {
                 System.Windows.MessageBox.Show("les informations entrées sont fausse réessayez");
             }
-         
+
         }
+        public static string x;
         public void OnPasswordChanged(object sender, RoutedEventArgs e)
         {
             // Access the password entered in the PasswordBox

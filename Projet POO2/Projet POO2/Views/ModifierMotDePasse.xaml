@@ -20,13 +20,13 @@
 
         <TextBlock Text="Ajouter des informations sur le Terrain" Grid.Row="0" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,10"/>
 
-        <Label Content="Surphace du terrain  :" Grid.Row="1" Margin="10"/>
-        <TextBox Text="{Binding Terrain.Surface, UpdateSourceTrigger=PropertyChanged}" x:Name="SurfaceTerrain" Grid.Row="1" Margin="120,10,10,10" />
+        <Label Content="Ancien mot de passe  :" Grid.Row="1" Margin="10"/>
+        <PasswordBox x:Name="AncienMotDePasse" Grid.Row="1" Margin="120,10,10,10" PasswordChanged ="OnPasswordChangedChangement"/>
 
 
 
-        <Label Content="Emplacement :" Grid.Row="3" Margin="10"/>
-        <TextBox Text="{Binding Terrain.Emplacement, UpdateSourceTrigger=PropertyChanged}" x:Name="TypeVin" Grid.Row="3" Margin="120,10,10,10" />
+        <Label Content="nouveau mot de passe" Grid.Row="3" Margin="10"/>
+        <PasswordBox x:Name="NouveauMootDePasse" Grid.Row="3" Margin="120,10,10,10" PasswordChanged ="OnPasswordChangedNouveau" />
 
         <!-- Boutons OK et Annuler -->
         <StackPanel Orientation="Horizontal" Grid.Row="8" HorizontalAlignment="Center" Margin="0,20">

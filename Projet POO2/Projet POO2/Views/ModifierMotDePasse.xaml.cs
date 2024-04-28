@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GestionVin;
+using Projet_POO2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,16 +21,62 @@ namespace Projet_POO2.Views
     /// </summary>
     public partial class ModifierMotDePasse : Window
     {
+        public Utilisateur user = new Utilisateur();
         public ModifierMotDePasse()
         {
             InitializeComponent();
+            
+            user = ApplicationVinDbContext.GetUserByEmail(MainWindow.x);
         }
-        public void OK(object sender, RoutedEventArgs e) { }
+        
+        string password;
+        string password2;
+        public void OK(object sender, RoutedEventArgs e) {
+            if (password == user.MotDePasse ) { 
+                if(password2.Length < 8)
+                {
+                    MessageBox.Show("Nouveau mot de passe inseré est trop petit");
+                }
+                else
+                {
+                    ApplicationVinDbContext.UpdateUserPassword(MainWindow.x, password2);
+                    MessageBox.Show("Nouveau mot de passe a été attribué");
+                }
+
+
+            } 
+            else
+            {
+                MessageBox.Show("Mot de passe inseré est faux");
+            }
+        
+        
+        
+        
+        }
         public void Annuler(object sender, RoutedEventArgs e)
         {
 
             this.Close();
         }
+
+        public void OnPasswordChangedChangement(object sender, RoutedEventArgs e)
+        {
+
+
+            PasswordBox passwordBox = (PasswordBox)sender;
+            this.password = passwordBox.Password;
+
+        }
+        public void OnPasswordChangedNouveau(object sender, RoutedEventArgs e)
+        {
+
+
+            PasswordBox passwordBox = (PasswordBox)sender;
+            this.password2 = passwordBox.Password;
+
+        }
+
     }
  
 }

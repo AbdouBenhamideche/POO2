@@ -1,8 +1,11 @@
-﻿using System;
+﻿using GestionVin;
+using Projet_POO2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -22,7 +25,11 @@ namespace Projet_POO2.Views
         public InProgramWindow()
         {
             InitializeComponent();
-            MessageAccueil.Text = "            Bienvenue dans notre application de gestion du vin !Découvrez une expérience unique pour explorer, cataloguer, apprécier et évaluer la qualité d'une large sélection de vins. Que vous soyez un amateur passionné ou un professionnel du vin, notre application vous offre les outils nécessaires pour enrichir votre expérience vinicole. \r\n";
+            Utilisateur user = new Utilisateur();
+            user = ApplicationVinDbContext.GetUserByEmail(MainWindow.x);
+            
+
+            MessageAccueil.Text = $"            Bienvenue {user.Prenom} {user.Nom} dans notre application de gestion du vin !Découvrez une expérience unique pour explorer, cataloguer, apprécier et évaluer la qualité d'une large sélection de vins. Que vous soyez un amateur passionné ou un professionnel du vin, notre application vous offre les outils nécessaires pour enrichir votre expérience vinicole. \r\n";
         }
 
         public void AjouterVin(object sender, RoutedEventArgs e)
