@@ -1,5 +1,6 @@
 ﻿using GestionVin;
 using Microsoft.VisualBasic.ApplicationServices;
+using Projet_POO2.Migrations;
 using Projet_POO2.Models;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Linq;
+using Projet_POO2.Models;
 
 namespace Projet_POO2.Views
 {
@@ -30,10 +33,15 @@ namespace Projet_POO2.Views
             InitializeComponent();
             Utilisateur user = new Utilisateur();
             user = ApplicationVinDbContext.GetUserByEmail(MainWindow.x);
+
             
             
 
             MessageAccueil.Text = $"            Bienvenue {user.Prenom}  {user.Nom} dans notre application de gestion du vin !Découvrez une expérience unique pour explorer, cataloguer, apprécier et évaluer la qualité d'une large sélection de vins. Que vous soyez un amateur passionné ou un professionnel du vin, notre application vous offre les outils nécessaires pour enrichir votre expérience vinicole. \r\n";
+
+            ApplicationVinDbContext context = new ApplicationVinDbContext();
+            
+            DataContext = new ViewModels.InProgramViewModel(this);
         }
 
         public void GererVin(object sender, RoutedEventArgs e)
@@ -126,7 +134,14 @@ namespace Projet_POO2.Views
             
 
         }
+        public void Apprentissage_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+        private void Predire(object sender, RoutedEventArgs e)
+        {
+            //effectuer une prediction 
+        }
 
         public void Confirmer(object sender, RoutedEventArgs e) {
             string nom, prenom, dateDeNaissance;

@@ -12,7 +12,10 @@
           "FontAwesome.WPF": "4.7.0.9",
           "Microsoft.EntityFrameworkCore.Design": "7.0.18",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.18",
-          "Microsoft.EntityFrameworkCore.Tools": "7.0.18"
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.18",
+          "ConsoleTables": "2.0.0.0",
+          "CsvHelper": "31.0.0.0",
+          "SimpleDecisionTreeLibrary": "1.0.0.0"
         },
         "runtime": {
           "Projet POO2.dll": {}
@@ -605,6 +608,30 @@
         "dependencies": {
           "System.Drawing.Common": "6.0.0"
         }
+      },
+      "ConsoleTables/2.0.0.0": {
+        "runtime": {
+          "ConsoleTables.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.6.1.0"
+          }
+        }
+      },
+      "CsvHelper/31.0.0.0": {
+        "runtime": {
+          "CsvHelper.dll": {
+            "assemblyVersion": "31.0.0.0",
+            "fileVersion": "31.0.3.17"
+          }
+        }
+      },
+      "SimpleDecisionTreeLibrary/1.0.0.0": {
+        "runtime": {
+          "SimpleDecisionTreeLibrary.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1068,6 +1095,21 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "ConsoleTables/2.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CsvHelper/31.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SimpleDecisionTreeLibrary/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

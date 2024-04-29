@@ -89,3 +89,6 @@ C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-wi
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\SupprimerVinWindow.g.cs
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\ModifierVinWindow.baml
 C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\obj\Debug\net7.0-windows\Views\SupprimerVinWindow.baml
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\ConsoleTables.dll
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\CsvHelper.dll
+C:\Users\abder\Documents\GitHub\POO2\Projet POO2\Projet POO2\bin\Debug\net7.0-windows\SimpleDecisionTreeLibrary.dll

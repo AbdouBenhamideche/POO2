@@ -97,50 +97,105 @@
                 <Grid>
                     <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="7"/>
+                        <ColumnDefinition Width="376.647"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
+                    <Label Content="Fichier .csv pour l’apprentissage et la génération du modèle :" Grid.Row="0" Grid.Column="1" Margin="3,10,10,10" FontSize="13"/>
+                    <TextBox Text="{Binding DonneesEntrainementArbre.TrainingData, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="2" Margin="10,10,10,10" Width="250"/>
+
+                    <Label Content="Fichier .csv pour évaluer les performances du modèle généré :" Grid.Row="1" Grid.Column="1" Margin="3,10,10,10" FontSize="13"/>
+                    <TextBox Text="{Binding DonneesEntrainementArbre.TestingData, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="1" Grid.Column="2" Margin="10,10,10,10" />
+
+                    <Label Content="Taux de reconnaissance : " Grid.Row="2" Grid.Column="1" Margin="3,10,10,10" FontSize="13" FontStyle="Oblique"/>
+                    <Label Content=" Matrice de confusion : " Grid.Row="2" Grid.Column="2" Margin="10,10,10,10" FontSize="13" FontStyle="Oblique"/>
+
+
                     <!-- Ajoutez ici les éléments pour le formulaire de connexion -->
-                    <Button Grid.Row="4" Grid.Column="3" Content="Apprentissage" Width="100" Height="30" />
-                    <Button Grid.Row="4" Grid.Column="4" Content="Evaluer" Width="100" Height="30" />
+
+                    <Button Grid.Row="1" Grid.Column="3" Content="Générer et evaluer 💡" Command="{Binding EvaluerCommand}" Width="120" Height="30" Margin="10,10,10,10"  />
+                    <Label Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,120,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Label Content="3" Grid.Row="0" Grid.Column="1" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="3" Grid.Row="1" Grid.Column="0" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="6" Grid.Row="2" Grid.Column="0" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="6" Grid.Row="0" Grid.Column="2" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="9" Grid.Row="0" Grid.Column="3" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="9" Grid.Row="3" Grid.Column="0" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+
+                            <Label Content="" Grid.Row="1" Grid.Column="1" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="" Grid.Row="1" Grid.Column="2" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="" Grid.Row="1" Grid.Column="3" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="" Grid.Row="2" Grid.Column="1" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="" Grid.Row="2" Grid.Column="2" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="" Grid.Row="2" Grid.Column="3" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="" Grid.Row="3" Grid.Column="1" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="" Grid.Row="3" Grid.Column="2" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                            <Label Content="" Grid.Row="3" Grid.Column="3" FontStyle="Oblique" HorizontalAlignment="Center"></Label>
+                        </Grid>
+                    </Label>
+                    <Label Content="{Binding DonneesEntrainementArbre.Accuracy, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" FontSize="25" Margin="158,0,0,0"></Label>
                 </Grid>
 
             </TabItem>
             <!-- Onglet Connexion -->
-            <TabItem Header="Effectuer une prédiction">
+            <TabItem Header="Effectuer une prédiction" Height="22" Margin="-2,0,-2,0" VerticalAlignment="Bottom">
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Choisissez une entité parmi les entités de votre liste afin d'effectuer une prédiction :"  Grid.ColumnSpan="5" Margin="20" />
-                    <Button Content="Prédire" Grid.Row="1" Grid.Column="3"  Width="100" Height="30" Margin="0,0,0,0"/>
+                    <TextBlock Text="Ajouter des informations sur le vin" Grid.Row="0" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" Margin="0,10"/>
 
+                    <Label Content="Niveau d'alcool :" Grid.Row="4" Margin="10"/>
+                    <TextBox Text="{Binding Vin.Alcohol, UpdateSourceTrigger=PropertyChanged}" x:Name="Alchool" Grid.Row="4" Margin="120,10,10,10" />
 
+                    <Label Content="Sulphates :" Grid.Row="5" Margin="10"/>
+                    <TextBox Text="{Binding Vin.Sulphates, UpdateSourceTrigger=PropertyChanged}" x:Name="Sulphates" Grid.Row="5" Margin="120,10,10,10" />
 
+                    <Label Content="Acide citrique :" Grid.Row="6" Margin="10"/>
+                    <TextBox Text="{Binding Vin.CitricAcid, UpdateSourceTrigger=PropertyChanged}" x:Name="AcideCitrique" Grid.Row="6" Margin="120,10,10,10" />
+
+                    <Label Content="Volatile Acidité :" Grid.Row="7" Margin="10"/>
+                    <TextBox Text="{Binding Vin.VolatileAcidity, UpdateSourceTrigger=PropertyChanged}" x:Name="VolatileAcidite" Grid.Row="7" Margin="120,10,10,10" />
+
+                    <!-- Boutons OK et Annuler -->
+                    <StackPanel Orientation="Horizontal" Grid.Row="8" HorizontalAlignment="Center" Margin="0,20">
+                        <Button Content="Predire" Width="100" Margin="10" Click="Predire"/>
+                    </StackPanel>
                 </Grid>
-
             </TabItem>
             <TabItem Header="Modifier infomations personelles">
                 <Grid>

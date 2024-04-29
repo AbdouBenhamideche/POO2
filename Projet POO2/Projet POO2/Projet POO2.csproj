@@ -32,4 +32,16 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="ConsoleTables">
+      <HintPath>ConsoleTables.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleDecisionTreeLibrary">
+      <HintPath>SimpleDecisionTreeLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
