@@ -11,9 +11,9 @@
     
             <MenuItem Header="Fichier">
                  
-                <MenuItem Header="Ouvrir ..." />
+                <MenuItem Header="Ouvrir ..." Click="Ouvrir"/>                                          1
                
-                <MenuItem Header="Quitter"/>
+                <MenuItem Header="Quitter" Click="Quitter"/>
             </MenuItem>
 
             <MenuItem Header="Client">

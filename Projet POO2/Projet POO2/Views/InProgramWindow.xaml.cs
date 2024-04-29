@@ -3,6 +3,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 using Projet_POO2.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -69,6 +71,63 @@ namespace Projet_POO2.Views
 
 
         }
+
+
+        public void Quitter(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+            
+
+
+        }
+        public void Ouvrir(object sender, RoutedEventArgs e)
+        {
+            // Create an OpenFileDialog object
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Set filter for the file types the dialog should display
+            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+
+            // Set the initial directory
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            // Set the title of the dialog
+            openFileDialog.Title = "Select a File to Open";
+
+            // Show the dialog and get the result
+            var result = openFileDialog.ShowDialog();
+
+            // Check if the user selected a file
+            
+                // Get the selected file path
+                string selectedFilePath = openFileDialog.FileName;
+
+                try
+                {
+                    // Open the file in read mode (without returning content)
+                    using (StreamReader reader = new StreamReader(selectedFilePath))
+                    {
+                        // You can process the file content line by line here
+                        string line;
+                        while ((line = reader.ReadLine()) != null)
+                        {
+                            // Process each line of the file
+                            Console.WriteLine(line);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions that occur while opening the file
+                    Console.WriteLine("Error opening file: " + ex.Message);
+                }
+            
+
+        }
+
+
         public void Confirmer(object sender, RoutedEventArgs e) {
             string nom, prenom, dateDeNaissance;
             Utilisateur user = new Utilisateur();
@@ -80,7 +139,7 @@ namespace Projet_POO2.Views
             dateDeNaissance = datePicker.SelectedDate.ToString();
             if (!string.IsNullOrEmpty(nom) && !string.IsNullOrEmpty(prenom) && !string.IsNullOrEmpty(dateDeNaissance)) { 
             ApplicationVinDbContext.UpdateUser(nom, prenom, user.IdUtilisateur, dateDeNaissance);
-                MessageBox.Show("Modification effectué avec succées, Redemarrez l'application pour effectuer les changements");
+                System.Windows.MessageBox.Show("Modification effectué avec succées, Redemarrez l'application pour effectuer les changements");
                user.Nom = nom;
                 user.Prenom = prenom;
                 user.DateDeNaissance = dateDeNaissance.ToString();
@@ -88,7 +147,7 @@ namespace Projet_POO2.Views
             }
             else
             {
-                MessageBox.Show("Vouillez remplir tout les champs");
+                System.Windows.MessageBox.Show("Vouillez remplir tout les champs");
             }
 
 
