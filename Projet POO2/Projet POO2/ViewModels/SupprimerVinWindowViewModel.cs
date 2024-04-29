@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Projet_POO2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +27,8 @@ namespace Projet_POO2.ViewModels
         public ICommand SupprimerVinCommand { get; private set; }
         public void ActionTest()
         {
-
+            ApplicationVinDbContext.DeleteVin(Vin.IdVin);
+            _supprimerVinWindow.Close();
 
 
         }

@@ -27,8 +27,11 @@ namespace Projet_POO2.ViewModels
         public ICommand ModifierVinCommand { get; private set; }
         public void ActionTest()
         {
-            
-            
+            ApplicationVinDbContext.UpdateVin(Vin.IdVin, Vin.Alcohol, Vin.Sulphates, Vin.CitricAcid, Vin.VolatileAcidity, Vin.Name);
+            _modifierVinWindow.Close();
+
+
+
 
         }
     }
