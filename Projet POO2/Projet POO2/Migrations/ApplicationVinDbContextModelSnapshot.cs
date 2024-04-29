@@ -225,12 +225,12 @@ namespace Projet_POO2.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Vin_idVin")
+                    b.Property<int?>("VinIdVin")
                         .HasColumnType("int");
 
                     b.HasKey("IdTest");
 
-                    b.HasIndex("Vin_idVin");
+                    b.HasIndex("VinIdVin");
 
                     b.ToTable("Tests");
                 });
@@ -352,11 +352,11 @@ namespace Projet_POO2.Migrations
 
             modelBuilder.Entity("Projet_POO2.Models.Vin", b =>
                 {
-                    b.Property<int>("_idVin")
+                    b.Property<int>("IdVin")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("_idVin"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdVin"));
 
                     b.Property<float>("Alcohol")
                         .HasColumnType("real");
@@ -364,17 +364,11 @@ namespace Projet_POO2.Migrations
                     b.Property<float>("CitricAcid")
                         .HasColumnType("real");
 
-                    b.Property<int>("IdVin")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Qualite")
-                        .HasColumnType("int");
-
-                    b.Property<int>("QualityIdQualite")
                         .HasColumnType("int");
 
                     b.Property<float>("Sulphates")
@@ -387,9 +381,9 @@ namespace Projet_POO2.Migrations
                     b.Property<float>("VolatileAcidity")
                         .HasColumnType("real");
 
-                    b.HasKey("_idVin");
+                    b.HasKey("IdVin");
 
-                    
+                    b.ToTable("Vins");
                 });
 
             modelBuilder.Entity("Projet_POO2.Models.VinBlanc", b =>
@@ -548,7 +542,7 @@ namespace Projet_POO2.Migrations
                 {
                     b.HasOne("Projet_POO2.Models.Vin", null)
                         .WithMany("Tests")
-                        .HasForeignKey("Vin_idVin");
+                        .HasForeignKey("VinIdVin");
                 });
 
             modelBuilder.Entity("Projet_POO2.Models.TestVin", b =>
@@ -587,17 +581,6 @@ namespace Projet_POO2.Migrations
                     b.Navigation("_proprietaireVignoble");
 
                     b.Navigation("_terrain");
-                });
-
-            modelBuilder.Entity("Projet_POO2.Models.Vin", b =>
-                {
-                    b.HasOne("Projet_POO2.Models.Qualite", "Quality")
-                        .WithMany()
-                        .HasForeignKey("QualityIdQualite")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Quality");
                 });
 
             modelBuilder.Entity("Projet_POO2.Models.VinBlanc", b =>

@@ -1,5 +1,5 @@
 ﻿using Microsoft.Identity.Client;
-using Projet_POO2.Migrations;
+//using Projet_POO2.Migrations;
 using Projet_POO2.Models;
 using System;
 using System.Collections.Generic;
@@ -34,11 +34,13 @@ namespace Projet_POO2.Views
         }
         private void ModifierVin(object sender, RoutedEventArgs e)
         {
-            ModifierVinWindow modifierVinWindow = new ModifierVinWindow(); modifierVinWindow.ShowDialog();
+            ModifierVinWindow modifierVinWindow = new ModifierVinWindow();
+            modifierVinWindow.ShowDialog();
         }
         private void SupprimerVin(object sender, RoutedEventArgs e)
         {
-            SupprimerVinWindow supprimerVinWindow = new SupprimerVinWindow(); supprimerVinWindow.ShowDialog();
+            SupprimerVinWindow supprimerVinWindow = new SupprimerVinWindow();
+            supprimerVinWindow.ShowDialog();
  
         }
         private void Raflaichir(object sender, RoutedEventArgs e)
@@ -54,12 +56,13 @@ namespace Projet_POO2.Views
             // Check if the StackPanel exists
             if (listVinStackPanel != null)
             {
+                listVinStackPanel.Children.Clear();
                 // Iterate through the Vin objects
                 foreach (Models.Vin vin in vins)
                 {
                     // Create a TextBlock to display Vin information
                     TextBlock vinTextBlock = new TextBlock();
-                    vinTextBlock.Text = $"Vin ID: {vin.IdVin}, Alcohol: {vin.Alcohol}, Citric Acid: {vin.CitricAcid}, Sulphates: {vin.Sulphates}, Volatile Acidity: {vin.VolatileAcidity}";
+                    vinTextBlock.Text = $"Vin ID: {vin.IdVin}, Vin nom: {vin.Name}, Alcohol: {vin.Alcohol}, Citric Acid: {vin.CitricAcid}, Sulphates: {vin.Sulphates}, Volatile Acidity: {vin.VolatileAcidity}";
 
                     // Add the TextBlock to the StackPanel
                     listVinStackPanel.Children.Add(vinTextBlock);

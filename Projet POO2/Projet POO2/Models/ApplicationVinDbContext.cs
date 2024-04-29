@@ -233,7 +233,7 @@ namespace Projet_POO2.Models
             context.Vins.Add(vin);
             context.SaveChanges();
         }
-        public static void UpdateVin(int idVin, float alcohol, float sulphates, float citricAcid, float volatileAcidity, int quality)
+        public static void UpdateVin(int idVin, float alcohol, float sulphates, float citricAcid, float volatileAcidity, string name)
         {
             ApplicationVinDbContext context = new ApplicationVinDbContext();
             Models.Vin vin = context.Vins.Find(idVin);
@@ -244,7 +244,7 @@ namespace Projet_POO2.Models
                 vin.Sulphates = sulphates;
                 vin.CitricAcid = citricAcid;
                 vin.VolatileAcidity = volatileAcidity;
-                vin.Qualite = quality;
+                vin.Name = name;
 
                 context.SaveChanges();
             }

@@ -21,7 +21,7 @@ namespace Projet_POO2.Models
         private float _sulphates;
         private float _volatileAcidity;
         private int _qualite;
-        public Qualite Quality { get; set; }
+        
 
         public ICollection<Test> Tests { get; set; }
         public ICollection<TestVin> TestVins { get; set; }

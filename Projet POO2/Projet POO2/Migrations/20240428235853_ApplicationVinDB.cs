@@ -129,6 +129,25 @@ namespace Projet_POO2.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Vins",
+                columns: table => new
+                {
+                    IdVin = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Alcohol = table.Column<float>(type: "real", nullable: false),
+                    CitricAcid = table.Column<float>(type: "real", nullable: false),
+                    Sulphates = table.Column<float>(type: "real", nullable: false),
+                    VolatileAcidity = table.Column<float>(type: "real", nullable: false),
+                    Qualite = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Vins", x => x.IdVin);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "VinBlancs",
                 columns: table => new
                 {
@@ -231,28 +250,6 @@ namespace Projet_POO2.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Vins",
-                columns: table => new
-                {
-                    _idVin = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    QualityIdQualite = table.Column<int>(type: "int", nullable: false),
-                    IdVin = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Alcohol = table.Column<float>(type: "real", nullable: false),
-                    CitricAcid = table.Column<float>(type: "real", nullable: false),
-                    Sulphates = table.Column<float>(type: "real", nullable: false),
-                    VolatileAcidity = table.Column<float>(type: "real", nullable: false),
-                    Qualite = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Vins", x => x._idVin);
-                    
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Vignobles",
                 columns: table => new
                 {
@@ -296,16 +293,16 @@ namespace Projet_POO2.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nom = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Vin_idVin = table.Column<int>(type: "int", nullable: true)
+                    VinIdVin = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tests", x => x.IdTest);
                     table.ForeignKey(
-                        name: "FK_Tests_Vins_Vin_idVin",
-                        column: x => x.Vin_idVin,
+                        name: "FK_Tests_Vins_VinIdVin",
+                        column: x => x.VinIdVin,
                         principalTable: "Vins",
-                        principalColumn: "_idVin");
+                        principalColumn: "IdVin");
                 });
 
             migrationBuilder.CreateTable(
@@ -330,7 +327,7 @@ namespace Projet_POO2.Migrations
                         name: "FK_TestVins_Vins_IdVin",
                         column: x => x.IdVin,
                         principalTable: "Vins",
-                        principalColumn: "_idVin",
+                        principalColumn: "IdVin",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -345,9 +342,9 @@ namespace Projet_POO2.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tests_Vin_idVin",
+                name: "IX_Tests_VinIdVin",
                 table: "Tests",
-                column: "Vin_idVin");
+                column: "VinIdVin");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TestVins_IdTest",
@@ -388,11 +385,6 @@ namespace Projet_POO2.Migrations
                 name: "IX_VinRouges_QualiteIdQualite",
                 table: "VinRouges",
                 column: "QualiteIdQualite");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Vins_QualityIdQualite",
-                table: "Vins",
-                column: "QualityIdQualite");
         }
 
         /// <inheritdoc />
@@ -438,10 +430,10 @@ namespace Projet_POO2.Migrations
                 name: "Terrains");
 
             migrationBuilder.DropTable(
-                name: "Vins");
+                name: "Qualites");
 
             migrationBuilder.DropTable(
-                name: "Qualites");
+                name: "Vins");
         }
     }
 }
